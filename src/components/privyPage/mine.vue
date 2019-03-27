@@ -1,11 +1,12 @@
 <template>
     <div id="mine">
+      <router-view></router-view>
       <header>我的</header>
       <ul class="items">
-        <li>设置</li><div id='iconfont1'><span class="iconfont">&#xe64a;</span></div>
-        <li>消息通知</li><div id='iconfont2'><span class="iconfont">&#xe64a;</span></div>
-        <li>关于人民法院公告</li><div id='iconfont3'><span class="iconfont">&#xe64a;</span></div>
-        <li>客服</li><div id='iconfont4'><span class="iconfont">&#xe64a;</span></div>
+        <li @click="goSetting()">设置</li><div id='iconfont1'><span class="iconfont">&#xe64a;</span></div>
+        <li @click="goNotice()">消息通知</li><div id='iconfont2'><span class="iconfont">&#xe64a;</span></div>
+        <li  @click="jugdeNotice()">关于人民法院公告</li><div id='iconfont3'><span class="iconfont">&#xe64a;</span></div>
+        <li @click="sever()">客服</li><div id='iconfont4'><span class="iconfont">&#xe64a;</span></div>
       </ul>
       <footer>退出登录</footer>
     <ul class="botm">
@@ -18,7 +19,20 @@
 
 <script>
 export default {
-    
+    methods: {
+      goSetting(){
+        this.$router.push({name:'settingDetail'})
+      },
+      goNotice(){
+        this.$router.push({name:'msgNoRead'})
+      },
+      jugdeNotice(){
+        this.$router.push({name:'jugdeNotice'})
+      },
+      sever(){
+        this.$router.push({name:'sever'})
+      }
+    },
 }
 </script>
 
@@ -58,7 +72,7 @@ li{
   .h(40);
    position: absolute;
    top:46px;
-   right:-4px;
+   right:0px;
 .iconfont{
   .w(15);
   .h(15);
@@ -70,21 +84,21 @@ li{
   .h(40);
    position: absolute;
    top:96px;
-   right:-4px;
+   right:0px;
  }
  #iconfont3{
   .w(40);
   .h(40);
    position: absolute;
    top:146px;
-   right:-4px;
+   right:0px;
  }
  #iconfont4{
   .w(40);
   .h(40);
    position: absolute;
    top:196px;
-   right:-4px;
+   right:0px;
  }
  }
  footer{
@@ -102,12 +116,14 @@ li{
     .botm{
     .w(375);
     .h(45);
+    .l_h(45);
     position: fixed;
     bottom:0;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background: #f8f8f8;
+    box-sizing: border-box;
     border-top: 1px solid #bbb;
     .sel{
       color: rgb(229, 28, 35);

@@ -11,9 +11,6 @@
     <router-link tag="li" to="/privysearch" active-class='sel'>搜索</router-link>
     <router-link tag="li" to="/privymine" active-class='sel'>我的</router-link>
   </ul>
-    <!-- <li><a :href="index">首页</a></li>
-    <li><a :href="search">搜索</a></li>
-    <li><a :href="mine">我的</a></li> -->
    </div>
 </template>
 
