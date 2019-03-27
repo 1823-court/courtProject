@@ -6,6 +6,7 @@ import Demo from './common/font/demo.css';
 import router from "./router";
 
 
+
 import Axios from './axios'
 import store from  './store'
 Vue.prototype.$axios = Axios
@@ -23,6 +24,6 @@ new Vue({
   el: "#app",
   router,
   store,
-  components: { App },
+  components: {App},
   template: "<App/>"
 });

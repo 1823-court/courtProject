@@ -5,6 +5,36 @@
         <input type="text" placeholder="请输入案号">
          <img class='ser' src="../../common/img/search.png">
     </header>
+    <article>
+        <h5>已刊登的最新公告</h5>
+      <div class="content" @click="goDetail()">
+      <img src="../../common/img/pic1.jpg">
+      <div class="tit">
+      <h4>公告名称：公司法人变更</h4>
+      <p>公告类别：开庭传票</p>
+      <p>案号（2017）桂0620民初668号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>当事人：张三三</span></p>
+      </div>
+      <span class="iconfont">&#xe64a;</span>
+    </div>
+      <div class="content" @click="goDetail()">
+      <img src="../../common/img/pic1.jpg">
+      <div class="tit">
+      <h4>公告名称：公司法人变更</h4>
+      <p>公告类别：开庭传票</p>
+      <p>案号（2017）桂0620民初668号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>当事人：张三三</span></p>
+      </div>
+      <span class="iconfont">&#xe64a;</span>
+    </div>
+      <div class="content" @click="goDetail()">
+      <img src="../../common/img/pic1.jpg">
+      <div class="tit">
+      <h4>公告名称：公司法人变更</h4>
+      <p>公告类别：开庭传票</p>
+      <p>案号（2017）桂0620民初668号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>当事人：张三三</span></p>
+      </div>
+      <span class="iconfont">&#xe64a;</span>
+    </div>
+    </article>
     <ul class="botm">
     <router-link tag="li" to="/privyindex" active-class='sel'>首页</router-link>
     <router-link tag="li" to="/privysearch" active-class='sel'>搜索</router-link>
@@ -15,7 +45,11 @@
 
 <script>
 export default {
-    
+     methods: {
+    goDetail(){
+     this.$router.push({name:'payPendingDetail'})
+    }
+  },
 }
 </script>
 
@@ -56,6 +90,36 @@ export default {
     right:54px;
    }
     }
+    article{
+      .w(375);
+      h5{
+         .w(200);
+         .h(24);
+         margin:0 auto;
+         text-align: center;
+        font-size:@fontSize-L;
+        color:red;
+        font-weight: 400;
+      }
+      .content{
+  .w(375);
+  .h(72);
+  margin-top: 8px;
+  padding-top:10px;
+  background: #fff;
+  font-size:@fontSize-s;
+  color:#000;
+  display: flex;
+  img{
+  .w(60);
+  .h(60);
+  margin-right: 16px;
+  }
+  .tit{
+    .l_h(20);
+  }
+}
+    }
     .botm{
     .w(375);
     .h(45);
@@ -73,6 +137,12 @@ export default {
       font-size:@fontSize-L;
      color:@fontColornormal;
     }
+  }
+  .iconfont{
+    .w(20);
+    .h(20);
+    position: relative;
+    top:20px;
   }
 }
 </style>

@@ -12,6 +12,17 @@ import privymine from "../components/privyPage/mine";
 
 import payPendingDetail from "../components/privyPage/home/detail/payPendingDetail";
 import noticingDetail from "../components/privyPage/home/detail/noticingDetail";
+
+import settingDetail from "../components/privyPage/home/mineDetail/settingDetail";
+import updateName from "../components/privyPage/home/mineDetail/updateName";
+import psdReset from "../components/privyPage/home/mineDetail/psdReset";
+import changeNum from "../components/privyPage/home/mineDetail/changeNum";
+import msgNoticeDetail from "../components/privyPage/home/mineDetail/msgNoticeDetail";
+import msgReaded from "../components/privyPage/home/mineDetail/msgReaded";
+import msgNoRead from "../components/privyPage/home/mineDetail/msgNoRead";
+import jugdeNotice from "../components/privyPage/home/mineDetail/jugdeNotice";
+import sever from "../components/privyPage/home/mineDetail/sever";
+
 const router = new Router({
   routes: [
     // 首页 搜索页 我的主页面路由
@@ -65,7 +76,62 @@ const router = new Router({
     {
       path: "/privymine",
       name: "privymine",
-      component: privymine
+      component: privymine,
+      children: [
+        {
+          path: "settingDetail",
+          name: "settingDetail",
+          component: settingDetail,
+          children: [
+            {
+              path: "updateName",
+              name: "updateName",
+              component: updateName
+            },
+            {
+              path: "psdReset",
+              name: "psdReset",
+              component: psdReset
+            },
+            {
+              path: "changeNum",
+              name: "changeNum",
+              component: changeNum
+            }
+          ]
+        },
+        {
+          path: "msgNoticeDetail",
+          name: "msgNoticeDetail",
+          component: msgNoticeDetail,
+          children: [
+            {
+              path: "msgReaded",
+              name: "msgReaded",
+              component: msgReaded
+            },
+            {
+              path: "msgNoRead",
+              name: "msgNoRead",
+              component: msgNoRead
+            },
+            {
+              path: "/",
+              redirect: "/privymine/msgNoticeDetail/msgNoRead"
+            }
+          ]
+        },
+        {
+          path: "jugdeNotice",
+          name: "jugdeNotice",
+          component: jugdeNotice
+        },
+        {
+          path: "sever",
+          name: "sever",
+          component: sever
+        }
+      ]
     },
     {
       path: "/",

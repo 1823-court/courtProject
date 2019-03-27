@@ -73,7 +73,8 @@
 export default {
     methods: {
         back(){
-           this.$router.push('/privyindex/payPending') 
+          //  this.$router.push('/privyindex/payPending') 
+          this.$router.go(-1);
         }
     },
   components: {}
@@ -86,7 +87,7 @@ export default {
 #contains {
   .w(375);
   position: absolute;
-  top: 0px;
+  top: -8px;
   bottom: 0;
   background: @mybgColor;
   z-index: 999;
@@ -128,7 +129,7 @@ export default {
     .h(35); 
     border-radius: 6px;
     font-size: @fontSize-s;
-    color:@selfontColor;
+    // color:@selfontColor;
     } 
     input{
     .w(250);

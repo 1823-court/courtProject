@@ -52,7 +52,8 @@
 export default {
   methods: {
     back() {
-      this.$router.push("/privyindex/noticing");
+      this.$router.go(-1);
+      // this.$router.push("/privyindex/noticing");
     },
     goPay(){
       this.$router.push({name:'payPendingDetail'})
