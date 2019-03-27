@@ -10,7 +10,6 @@ import RegisterJudge from "../components/registerOrLogin/home/register/registerJ
 import RegisterParty from "../components/registerOrLogin/home/register/registerParty";
 import RegisterAgreement from "../components/registerOrLogin/home/register/registerAgreement";
 
-<<<<<<< HEAD
 import payPending from "../components/privyPage/home/payPending";
 import noticing from "../components/privyPage/home/noticing";
 import noticed from "../components/privyPage/home/noticed";
@@ -31,9 +30,49 @@ import msgReaded from "../components/privyPage/home/mineDetail/msgReaded";
 import msgNoRead from "../components/privyPage/home/mineDetail/msgNoRead";
 import jugdeNotice from "../components/privyPage/home/mineDetail/jugdeNotice";
 import sever from "../components/privyPage/home/mineDetail/sever";
-
+import ForgetPassword from "../components/registerOrLogin/home/login/forgetPassword"
 const router = new Router({
   routes: [
+		//登录
+		{
+		  path: "/register",
+		  name: "register",
+		  component: Register,
+		},
+		{
+		path: "/registerJudge",
+		name: "registerJudge",
+		component: RegisterJudge,
+		},
+			{
+		path: "/registerParty",
+		name: "registerParty",
+		component: RegisterParty,
+		},
+					{
+		path: "/registerAgreement",
+		name: "registerAgreement",
+		component: RegisterAgreement,
+		},
+		{
+		  path: "/login",
+		  name: "login",
+		  component: Login
+		},
+				{
+		path: "/forgetPassword",
+		name: "forgetPassword",
+		component: ForgetPassword,
+		},
+		{
+		  path: "/customerService",
+		  name: "customerService",
+		  component: CustomerService
+		},
+		{
+		  path: "/",
+		  redirect: "/register"
+		},
     // 首页 搜索页 我的主页面路由
     {
       path: "/privyindex",
@@ -141,52 +180,7 @@ const router = new Router({
           component: sever
         }
       ]
-    },
-=======
-//---login
-import ForgetPassword from "../components/registerOrLogin/home/login/forgetPassword";
-const router = new Router({
-  routes: [
-		{
-		  path: "/register",
-		  name: "register",
-		  component: Register,
-		},
-		{
-		path: "/registerJudge",
-		name: "registerJudge",
-		component: RegisterJudge,
-		},
-			{
-		path: "/registerParty",
-		name: "registerParty",
-		component: RegisterParty,
-		},
-					{
-		path: "/registerAgreement",
-		name: "registerAgreement",
-		component: RegisterAgreement,
-		},
-		{
-		  path: "/login",
-		  name: "login",
-		  component: Login
-		},
-				{
-		path: "/forgetPassword",
-		name: "forgetPassword",
-		component: ForgetPassword,
-		},
-		{
-		  path: "/customerService",
-		  name: "customerService",
-		  component: CustomerService
-		},
->>>>>>> gzk
-    {
-      path: "/",
-      redirect: "/register"
     }
-  ]
-});
+   ],
+	 }) 
 export default router;
