@@ -5,11 +5,11 @@
 </template>
   
 <script>
-import privyindex from './components/privyPage/index';
+import Register from './components/registerOrLogin/register';
 export default {
   name:'App',
   components:{
-  privyindex,
+	Register
   }
 }
 </script>
