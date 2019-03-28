@@ -17,8 +17,8 @@ import noticingDetail from "../components/privyPage/home/detail/noticingDetail";
 
 import Heaving from '../components/judePage/judge/heaving.vue'
 import noHeaving from '../components/judePage/judge/noHeaving.vue'
-import Detail from 'components/common/detail/detail.vue'
-import Pay from 'components/common/pay/pay.vue'
+import Detail from 'components/judePage/judge/detail/detail.vue'
+import Pay from 'components/judePage/judge/pay/pay.vue'
 
 import Judge from 'components/judePage/judge/judge.vue'
 import Search from 'components/judePage/search/search.vue'
@@ -107,6 +107,13 @@ export default new Router({
           path: 'noHeaving',
           name: 'noHeaving',
           component: noHeaving,
+          children:[
+            {
+              path:'upload',
+              name:'upload',
+              component:Upload
+            }
+          ]
        },
        {
         path:'/',

@@ -1,6 +1,6 @@
 <template>
     <div class="detail" >
-        <img  @click='goBack' class='arrow_left' src="../../../common/img/arrow-left.png" alt="">
+        <img  @click='goBack' class='arrow_left' src="../../../../common/img/arrow-left.png" alt="">
         <div class="ann_detail">
           公告费用支付
         </div>
@@ -24,9 +24,9 @@
 </template>
 
 <script>
-import Dheader from '../detail-header/d-header.vue'
+//import Dheader from '../detail-header/d-header.vue'
 export default {
-    components:{Dheader},
+    //components:{Dheader},
     methods:{
         goBack(){
             this.$router.go(-1)
@@ -48,14 +48,14 @@ export default {
     .arrow_left{
         .w(30);
         .h(30);
-        background: yellowgreen;
+        background: @d-headerColor;
         position: absolute;
         top: 6px;
         left: 10px;
     };
     .ann_detail{
         .h(45);
-        background: yellowgreen;
+        background: @d-headerColor;
         font-size: @fontSize-l;
         text-align: center;
         .l_h(45);

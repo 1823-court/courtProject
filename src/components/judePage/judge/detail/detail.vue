@@ -1,6 +1,6 @@
 <template>
     <div class="detail" >
-        <img  @click='goBack' class='arrow_left' src="../../../common/img/arrow-left.png" alt="">
+        <img  @click='goBack' class='arrow_left' src="../../../../common/img/arrow-left.png" alt="">
         <div class="ann_detail">
           公告详情
         </div>
@@ -8,9 +8,9 @@
         <div class="ann_center">
             <p class="space_pic">版面照片：</p>
             <div class="img_box">
-                <img src="../../../common/img/okc.jpg" alt="">
-                <img src="../../../common/img/okc.jpg" alt="">
-                <img src="../../../common/img/okc.jpg" alt="">
+                <img src="../../../../common/img/okc.jpg" alt="">
+                <img src="../../../../common/img/okc.jpg" alt="">
+                <img src="../../../../common/img/okc.jpg" alt="">
             </div>
             <div class="detail_p">
                 <p>公告类别：<span>开庭传票</span></p>
@@ -26,9 +26,9 @@
 </template>
 
 <script>
-import Dheader from '../detail-header/d-header.vue'
+//import Dheader from '../detail-header/d-header.vue'
 export default {
-    components:{Dheader},
+    //components:{Dheader},
     methods:{
         goBack(){
             this.$router.go(-1)
@@ -53,14 +53,14 @@ export default {
     .arrow_left{
         .w(30);
         .h(30);
-        background: yellowgreen;
+        background: @d-headerColor;
         position: absolute;
         top: 6px;
         left: 10px;
     };
     .ann_detail{
         .h(45);
-        background: yellowgreen;
+        background: @d-headerColor;
         font-size: @fontSize-l;
         text-align: center;
         .l_h(45);

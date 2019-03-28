@@ -24,7 +24,7 @@ export default {
 @import "~common/css/index.less";
 
 #app{
-  // background:red;
+  
    .w(375);
   position:fixed;
   top:0;

@@ -6,7 +6,7 @@
                 <ul>
                     <li v-for='(item,index) in list'
                     :key='index'
-                   
+                   @click="goUpload"
                     >
                         <div class="left">
                             <img src="../../../common/img/okc.jpg" width='100' height='100' alt="">
@@ -41,6 +41,9 @@ export default {
 
     },
     methods:{
+        goUpload(){
+            this.$router.push('/upload')
+        },
         initScroll(){
             new BScroll('.warpper',{click:true})
         },
@@ -56,6 +59,7 @@ export default {
             this.timeFormate(new Date());
             setInterval(this.nowTimes,30*1000);
             },
+
         initRecommonedData(){
             setTimeout(() => {
                 let toplist = HeavingData.data.topList;
@@ -77,7 +81,7 @@ export default {
         }
     },
     created(){
-        this.initRecommonedData()
+        this.initRecommonedData();
         this.nowTimes();
     },
     mounted(){
@@ -108,7 +112,7 @@ export default {
             .w(375);
             .h(130);
             margin-left: 5px;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             //.padding(0,20,20,20);
             display:flex;
             align-items:center;
