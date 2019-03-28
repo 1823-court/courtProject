@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-      <router-view></router-view>
+
+    <router-view/>
+
   </div>
 </template>
   
@@ -10,12 +12,21 @@ export default {
   name:'App',
   components:{
 	Register
-  }
+  }	
 }
 </script>
 
-<style lang="less" scoped>
+<style lang ='less' scoped>
+@import "~common/css/index.less";
+
 #app{
+  // background:red;
+   .w(375);
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
 
 }
  

@@ -11,7 +11,7 @@
 <input name="Fruit" type="radio" value="" />法官<br>
 	   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>密码：</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"  placeholder="请输入密码"  class="password" ><br>
     <router-link tag="a" to="/forgetPassword">忘记了密码</router-link>
-		<input type="submit" value ="登录" class="register"/><br>
+		<input type="button" value ="登录" class="register" @click = 'go()'/><br>
 		<!-- <Radio v-model="single">Radio</Radio> -->
 		
 
@@ -33,6 +33,9 @@
 		methods:{
 			goBack(){
 				this.$router.go(-1);
+			},
+			go(){
+				this.$router.push({path:"/judge"})
 			}
 		}
 	}
