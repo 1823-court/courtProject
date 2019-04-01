@@ -29,86 +29,81 @@ import sever from "../components/privyPage/home/mineDetail/sever";
 import ForgetPassword from "../components/registerOrLogin/home/login/forgetPassword"
 import Heaving from '../components/judePage/judge/heaving.vue'
 import noHeaving from '../components/judePage/judge/noHeaving.vue'
-import Detail from 'components/common/detail/detail.vue'
-import Pay from 'components/common/pay/pay.vue'
+import Detail from 'components/judePage/judge/detail/detail.vue'
+import Pay from 'components/judePage/judge/pay/pay.vue'
 import Judge from 'components/judePage/judge/judge.vue'
-import Search from 'components/judePage/search/search.vue'
+import Search from "components/judePage/search/search.vue"
 import Upload from 'components/judePage/upload/upload.vue'
 import Mine from 'components/judePage/mine/mine.vue'
 
 export default new Router({
   routes: [
-		//登录
-		{
-		  path: "/register",
-		  name: "register",
-		  component: Register,
-		},
-		{
-		path: "/registerJudge",
-		name: "registerJudge",
-		component: RegisterJudge,
-		},
-			{
-		path: "/registerParty",
-		name: "registerParty",
-		component: RegisterParty,
-		},
-					{
-		path: "/registerAgreement",
-		name: "registerAgreement",
-		component: RegisterAgreement,
-		},
-		{
-		  path: "/login",
-		  name: "login",
-		  component: Login
-		},
-				{
-		path: "/forgetPassword",
-		name: "forgetPassword",
-		component: ForgetPassword,
-		},
-		{
-		  path: "/customerService",
-		  name: "customerService",
-		  component: CustomerService
-		},
-		{
-		  path: "/",
-		  redirect: "/register"
-		},
+    //登录
+    {
+      path: "/register",
+      name: "register",
+      component: Register,
+    },
+    {
+      path: "/registerJudge",
+      name: "registerJudge",
+      component: RegisterJudge,
+    },
+    {
+      path: "/registerParty",
+      name: "registerParty",
+      component: RegisterParty,
+    },
+    {
+      path: "/registerAgreement",
+      name: "registerAgreement",
+      component: RegisterAgreement,
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: Login
+    },
+    {
+      path: "/forgetPassword",
+      name: "forgetPassword",
+      component: ForgetPassword,
+    },
+    {
+      path: "/customerService",
+      name: "customerService",
+      component: CustomerService
+    },
+    {
+      path: "/",
+      redirect: "/register"
+    },
     // 首页 搜索页 我的主页面路由
     {
       path: "/privyindex",
       name: "privyindex",
       component: privyindex,
       // 首页里三个嵌套路由
-      children: [
-        {
+      children: [{
           path: "payPending",
           name: "payPending",
           component: payPending,
           // 子路由嵌套路由
-          children: [
-            {
-              path: "payPendingDetail",
-              name: "payPendingDetail",
-              component: payPendingDetail
-            },
-          ]
+          children: [{
+            path: "payPendingDetail",
+            name: "payPendingDetail",
+            component: payPendingDetail
+          }, ]
         },
         {
           path: "noticing",
           name: "noticing",
           component: noticing,
-          children: [
-            {
-              path: "noticingDetail",
-              name: "noticingDetail",
-              component: noticingDetail
-            }
-          ]
+          children: [{
+            path: "noticingDetail",
+            name: "noticingDetail",
+            component: noticingDetail
+          }]
         },
         {
           path: "noticed",
@@ -130,13 +125,11 @@ export default new Router({
       path: "/privymine",
       name: "privymine",
       component: privymine,
-      children: [
-        {
+      children: [{
           path: "settingDetail",
           name: "settingDetail",
           component: settingDetail,
-          children: [
-            {
+          children: [{
               path: "updateName",
               name: "updateName",
               component: updateName
@@ -157,8 +150,7 @@ export default new Router({
           path: "msgNoticeDetail",
           name: "msgNoticeDetail",
           component: msgNoticeDetail,
-          children: [
-            {
+          children: [{
               path: "msgReaded",
               name: "msgReaded",
               component: msgReaded
@@ -183,66 +175,71 @@ export default new Router({
           path: "sever",
           name: "sever",
           component: sever
-        }
+        },
+        {
+          path: 'noHeaving',
+          name: 'noHeaving',
+          component: noHeaving,
+          children: [{
+            path: 'upload',
+            name: 'upload',
+            component: Upload
+          }]
+        },
+       
       ]
     },
-		{
-		  path: "/judge",
-		  name: "judge",
-		  component: Judge,    
-		  children: [
-		    {
-		      path: 'heaving',
-		      name: 'heaving',
-		      component: Heaving,
-		      children:[
-		        {
-		          path:'detail',
-		          component:Detail,
-		          children:[
-		            {
-		              path:'pay',
-		              component:Pay,
-		            }
-		          ]
-		        }
-		      ]       
-		    },
-		    {
-		      path: 'noHeaving',
-		      name: 'noHeaving',
-		      component: noHeaving,
-		   },
-		   {
-		    path:'/',
-		    redirect:'/judge/heaving'
-		  
-		  }
-		  ]
-		  
-		},
-		{
-		  path: "/search",
-		  name: "search",
-		  component: Search
-		},
-		{
-		  path: "/upload",
-		  name: "upload",
-		  component: Upload
-		},
-		{
-		  path: "/mine",
-		  name: "mine",
-		  component: Mine
-		}
-   ]
-	 }) 
-    
-    //{
-      // path: "/",
-      // redirect: "/privyindex",
-			// 模板
-     
-    //},   
- 
+    {
+      path: "/judge",
+      name: "judge",
+      component: Judge,
+      children: [{
+          path: 'heaving',
+          name: 'heaving',
+          component: Heaving,
+          children: [{
+            path: 'detail',
+            component: Detail,
+            children: [{
+              path: 'pay',
+              component: Pay,
+            }]
+          }]
+        },
+        {
+          path: 'noHeaving',
+          name: 'noHeaving',
+          component: noHeaving,
+        },
+        {
+          path: '/',
+          redirect: '/judge/heaving'
+
+        }
+      ]
+
+    },
+    {
+      path: "/search",
+      name: "search",
+      component: Search
+    },
+    {
+      path: "/upload",
+      name: "upload",
+      component: Upload
+    },
+    {
+      path: "/mine",
+      name: "mine",
+      component: Mine
+    }
+  ]
+})
+
+//{
+// path: "/",
+// redirect: "/privyindex",
+// 模板
+
+//},   

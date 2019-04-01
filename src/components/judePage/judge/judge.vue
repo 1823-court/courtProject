@@ -1,7 +1,7 @@
 <template>
 <div>
     <banner></banner>
-    <div class='tab'>
+    <div class='nav'>
           <router-link tag='div' to='/judge/heaving' active-class='sel'>已登报</router-link>
           
           <router-link tag='div' to='/judge/noHeaving' active-class='sel'>未登报</router-link>
@@ -27,7 +27,7 @@ export default {
 
 <style lang='less' scoped>
 @import '~common/css/index.less';
-.tab{
+.nav{
     .w(375);
     .h(35);
     color:@fontColornormal;

@@ -1,7 +1,6 @@
 <template>
     <div>
-       
-      <tab/>
+       <tab/>
     </div>
 </template>
 
