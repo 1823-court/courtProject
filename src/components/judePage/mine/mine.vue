@@ -1,7 +1,11 @@
 <template>
     <div>
-        这里是我的
+       <router-link ></router-link>
+       <router-link ></router-link>
+       <router-link ></router-link>
 
+
+ 
     </div>
 </template>
 

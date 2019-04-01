@@ -21,7 +21,7 @@ import Detail from 'components/judePage/judge/detail/detail.vue'
 import Pay from 'components/judePage/judge/pay/pay.vue'
 
 import Judge from 'components/judePage/judge/judge.vue'
-import Search from 'components/judePage/search/search.vue'
+import Search from "../components/privyPage/search.vue";
 import Upload from 'components/judePage/upload/upload.vue'
 import Mine from 'components/judePage/mine/mine.vue'
 

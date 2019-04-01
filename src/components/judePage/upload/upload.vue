@@ -38,7 +38,7 @@
         </div>
         <div  class="ann_pic">
             公布照片：
-            <div class="add">+</div>
+             <input class="add" name="add" type="file"/>   
         </div>
         <div class="published">发布</div>
         <div class="cancel">取消</div>
@@ -104,17 +104,18 @@ export default {
         font-size: @fontSize-s;
         text-indent: 10px;
 
-        .add{
-            .w(90);
-            .h(90);
-            border: 1px solid grey;
-            text-align: center;
-            .l_h(75);
-            font-size: 60px;
-            margin: 10px;
-            text-indent: 0px;
+        // .add{
+        //     display: block;
+        //     .w(90);
+        //     .h(90);
+        //     border: 1px solid grey;
+        //     text-align: center;
+        //     .l_h(75);
+        //     font-size: 12px;
+        //     margin: 10px;
+        //     text-indent: 0px;
 
-        }
+        // }
     }
     .published,.cancel{
         .w(190);
