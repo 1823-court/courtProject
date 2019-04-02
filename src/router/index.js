@@ -42,22 +42,22 @@ export default new Router({
     {
       path: "/register",
       name: "register",
-      component: Register,
+      component: Register
     },
     {
       path: "/registerJudge",
       name: "registerJudge",
-      component: RegisterJudge,
+      component: RegisterJudge
     },
     {
       path: "/registerParty",
       name: "registerParty",
-      component: RegisterParty,
+      component: RegisterParty
     },
     {
       path: "/registerAgreement",
       name: "registerAgreement",
-      component: RegisterAgreement,
+      component: RegisterAgreement
     },
     {
       path: "/login",
@@ -67,7 +67,7 @@ export default new Router({
     {
       path: "/forgetPassword",
       name: "forgetPassword",
-      component: ForgetPassword,
+      component: ForgetPassword
     },
     {
       path: "/customerService",
@@ -84,36 +84,41 @@ export default new Router({
       name: "privyindex",
       component: privyindex,
       // 首页里三个嵌套路由
-      children: [{
+      children: [
+        {
           path: "payPending",
           name: "payPending",
           component: payPending,
           // 子路由嵌套路由
-          children: [{
-            path: "payPendingDetail",
-            name: "payPendingDetail",
-            component: payPendingDetail
-          }, ]
+          children: [
+            {
+              path: "payPendingDetail",
+              name: "payPendingDetail",
+              component: payPendingDetail
+            }
+          ]
         },
         {
           path: "noticing",
           name: "noticing",
           component: noticing,
-          children: [{
-            path: "noticingDetail",
-            name: "noticingDetail",
-            component: noticingDetail
-          }]
+          children: [
+            {
+              path: "noticingDetail",
+              name: "noticingDetail",
+              component: noticingDetail
+            }
+          ]
         },
         {
           path: "noticed",
           name: "noticed",
           component: noticed
         },
-        // {
-        //   path: "/",
-        //   redirect: "/privyindex/payPending"
-        // }
+        {
+          path: "/",
+          redirect: "/privyindex/payPending"
+        }
       ]
     },
     {
@@ -125,11 +130,13 @@ export default new Router({
       path: "/privymine",
       name: "privymine",
       component: privymine,
-      children: [{
+      children: [
+        {
           path: "settingDetail",
           name: "settingDetail",
           component: settingDetail,
-          children: [{
+          children: [
+            {
               path: "updateName",
               name: "updateName",
               component: updateName
@@ -150,7 +157,8 @@ export default new Router({
           path: "msgNoticeDetail",
           name: "msgNoticeDetail",
           component: msgNoticeDetail,
-          children: [{
+          children: [
+            {
               path: "msgReaded",
               name: "msgReaded",
               component: msgReaded
@@ -177,47 +185,51 @@ export default new Router({
           component: sever
         },
         {
-          path: 'noHeaving',
-          name: 'noHeaving',
+          path: "noHeaving",
+          name: "noHeaving",
           component: noHeaving,
-          children: [{
-            path: 'upload',
-            name: 'upload',
-            component: Upload
-          }]
-        },
-       
+          children: [
+            {
+              path: "upload",
+              name: "upload",
+              component: Upload
+            }
+          ]
+        }
       ]
     },
     {
       path: "/judge",
       name: "judge",
       component: Judge,
-      children: [{
-          path: 'heaving',
-          name: 'heaving',
+      children: [
+        {
+          path: "heaving",
+          name: "heaving",
           component: Heaving,
-          children: [{
-            path: 'detail',
-            component: Detail,
-            children: [{
-              path: 'pay',
-              component: Pay,
-            }]
-          }]
+          children: [
+            {
+              path: "detail",
+              component: Detail,
+              children: [
+                {
+                  path: "pay",
+                  component: Pay
+                }
+              ]
+            }
+          ]
         },
         {
-          path: 'noHeaving',
-          name: 'noHeaving',
-          component: noHeaving,
+          path: "noHeaving",
+          name: "noHeaving",
+          component: noHeaving
         },
         {
-          path: '/',
-          redirect: '/judge/heaving'
-
+          path: "/",
+          redirect: "/judge/heaving"
         }
       ]
-
     },
     {
       path: "/search",
@@ -235,7 +247,7 @@ export default new Router({
       component: Mine
     }
   ]
-})
+});
 
 //{
 // path: "/",

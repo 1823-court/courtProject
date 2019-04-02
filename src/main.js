@@ -4,7 +4,7 @@ import "./common/css/reset.css";
 import Font from './common/font/iconfont';
 import Demo from './common/font/demo.css';
 import router from "./router";
-
+import'jquery';
 
 
 import Axios from './axios'
