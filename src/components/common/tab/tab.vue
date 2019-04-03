@@ -1,25 +1,21 @@
 <template>
     <div class="tab">
-        <router-link
-        tag='div'
-        to='/judge'
-        active-class='sel'
-        >首页</router-link>
-         <router-link
-        tag='div'
-        to='/search'
-        active-class='sel'
-        >搜索</router-link>
-         <router-link
-        tag='div'
-        to='/upload'
-        active-class='sel'
-        >上传</router-link>
-         <router-link
-        tag='div'
-        to='/mine'
-        active-class='sel'
-        >我的</router-link>
+        <router-link tag='div' to='/judge' active-class='sel'>
+        <img src="../../../common/img/1@2x.png" alt="">
+        首页</router-link>
+        
+        <router-link tag='div' to='/search' active-class='sel'>
+        <img src="../../../common/img/2@2x.png" alt="">     
+         搜索</router-link>
+
+         <router-link tag='div' to='/upload' active-class='sel'>
+        <img src="../../../common/img/3@2x.png" alt="">
+        上传</router-link>
+
+        <router-link tag='div' to='/mine' active-class='sel'>
+        <img src="../../../common/img/4@2x.png" alt="">
+        我的</router-link>
+       
     </div>
 </template>
 
@@ -33,7 +29,7 @@ export default {
 @import '~common/css/index.less';
 .tab{
     .w(375);
-    .h(44);
+    .h(54);
     color:black;
     position: absolute;
     bottom: 0;
@@ -44,12 +40,20 @@ export default {
     justify-content: space-around;
     background: white;
      div{
-        .l_h(44);
+        //.l_h(44);
         color: black;
+        //background: pink;
+        font-size: 12px;
+
+        img{
+            .w(24);
+            .h(24);
+            margin: 4px 0;
+        }
     }
     .sel{
-        border-bottom: 2px solid red;
-        color: red;
+        //border-bottom: 2px solid red;
+        color: #2493ed;
     }
 }
 </style>
