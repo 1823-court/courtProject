@@ -4,9 +4,6 @@ import "./common/css/reset.css";
 import Font from './common/font/iconfont';
 import Demo from './common/font/demo.css';
 import router from "./router";
-
-
-
 import Axios from './axios'
 import store from  './store'
 Vue.prototype.$axios = Axios

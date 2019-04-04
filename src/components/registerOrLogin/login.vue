@@ -35,7 +35,7 @@
 				this.$router.go(-1);
 			},
 			go(){
-				this.$router.push({path:"/privyindex"})
+				this.$router.push({path:"/judge"})
 			}
 		}
 	}
