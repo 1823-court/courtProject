@@ -49,7 +49,7 @@ export default {
     bottom:0;
     .w(375);
     background: white;
-    z-index: 1;
+    z-index: 3;
     .arrow_left{
         .w(30);
         .h(30);

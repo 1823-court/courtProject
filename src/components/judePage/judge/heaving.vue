@@ -64,8 +64,7 @@ export default {
 
         initRecommonedData(){
             setTimeout(() => {
-                let toplist = HeavingData.data.topList;
-               
+                let toplist = HeavingData.data.topList;       
                 let arr=[]
                 toplist.forEach(element=>{
                    arr.push({
@@ -74,7 +73,7 @@ export default {
                          type:`公告类型: ${element.songList[1].singername}`,
                          parties_concerned:` ${element.songList[2].singername}`,
                          case_no:`案号： {2018}京02行初8号`,                       
-                         imgurl:element.picUrl
+                        // imgurl:element.picUrl
                      })
                 })
                 this.list=arr
@@ -138,12 +137,16 @@ export default {
                 .w(235);
                 .h(100);
                // background: #f5f5;
+               .announcement{
+                   color: #333;
+                   font-weight: 800;
+               }
                 p{
                     .h(20);
                     .w(200);
                     .l_h(20);
                     font-size:@fontSize-m;
-                     color:black;
+                     color:#2493ed;
                      //margin-top: 10px;
                      overflow: hidden;
                     text-overflow: ellipsis;
@@ -158,7 +161,7 @@ export default {
                     color: #666;
                 }
                 span{
-                    color: blue;
+                    color: #2493ed;
                 }
             }
         }

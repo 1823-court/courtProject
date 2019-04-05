@@ -9,8 +9,8 @@
             <img src="../../../common/img/notice@2x.png" alt="">
         </div>
     </header>
-    <img src="../../../common/img/banner@2x.png" class="banner"/>
-    
+    <!-- <img src="../../../common/img/banner@2x.png" class="banner"/> -->
+    <banner></banner>
     <div class='nav'>
           <router-link tag='div' to='/judge/heaving' active-class='sel'>已登报</router-link>
           
@@ -25,17 +25,23 @@
 <script>
 import configApi from 'common/api/apiconfig.js'
 import Tab from '../../common/tab/tab'
+import Banner from './banner/banner.vue'
 export default {
     
     components:{
-		Tab
+		Tab,
+        Banner,
     },
 }
 </script>
 
 <style lang='less' scoped>
 @import '~common/css/index.less';
-.search{
+header{
+    z-index: 2;
+    position: relative;
+    background: red;
+    .search{
     //background: pink;
     // .w(375);
     position: absolute;
@@ -58,8 +64,7 @@ export default {
       margin-left: 10px;
     }
 }
-.notice{
-    
+.notice{  
     img{
         .w(20);
        .h(20);
@@ -69,9 +74,6 @@ export default {
        top: 25px;
     }
 }
-.banner{
-    .w(375);
-    .h(250)
 }
 .nav{
     .w(375);
