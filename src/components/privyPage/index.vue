@@ -43,7 +43,7 @@ export default {
           { url: require("@/common/img/banner2.png") },
           { url: require("@/common/img/banner3.png") }
         ];
-      }, 1000);
+      }, 10);
       // this.$nextTick(() => {
       //   this.initswiper();
       // });

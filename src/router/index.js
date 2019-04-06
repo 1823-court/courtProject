@@ -2,41 +2,40 @@ import Vue from "vue";
 import Router from "vue-router";
 Vue.use(Router);
 // ------------------------------LennieGao--------------------------------------------
-import Register from "../components/registerOrLogin/register";
-import Login from "../components/registerOrLogin/login";
-import CustomerService from "../components/registerOrLogin/customerService";
-// ---register
-import RegisterJudge from "../components/registerOrLogin/home/register/registerJudge";
-import RegisterParty from "../components/registerOrLogin/home/register/registerParty";
-import RegisterAgreement from "../components/registerOrLogin/home/register/registerAgreement";
-import payPending from "../components/privyPage/home/payPending";
-import noticing from "../components/privyPage/home/noticing";
-import noticed from "../components/privyPage/home/noticed";
-import privyindex from "../components/privyPage/index";
-import privysearch from "../components/privyPage/search.vue";
-import privymine from "../components/privyPage/mine";
-import payPendingDetail from "../components/privyPage/home/detail/payPendingDetail";
-import noticingDetail from "../components/privyPage/home/detail/noticingDetail";
-import settingDetail from "../components/privyPage/home/mineDetail/settingDetail";
-import updateName from "../components/privyPage/home/mineDetail/updateName";
-import psdReset from "../components/privyPage/home/mineDetail/psdReset";
-import changeNum from "../components/privyPage/home/mineDetail/changeNum";
-import msgNoticeDetail from "../components/privyPage/home/mineDetail/msgNoticeDetail";
-import msgReaded from "../components/privyPage/home/mineDetail/msgReaded";
-import msgNoRead from "../components/privyPage/home/mineDetail/msgNoRead";
-import jugdeNotice from "../components/privyPage/home/mineDetail/jugdeNotice";
-import sever from "../components/privyPage/home/mineDetail/sever";
-import ForgetPassword from "../components/registerOrLogin/home/login/forgetPassword";
-import Heaving from "../components/judePage/judge/heaving.vue";
-import noHeaving from "../components/judePage/judge/noHeaving.vue";
-import Detail from "components/judePage/judge/detail/detail.vue";
-import Pay from "components/judePage/judge/pay/pay.vue";
-import Judge from "components/judePage/judge/judge.vue";
-import Search from "components/judePage/search/search.vue";
-import Upload from "components/judePage/upload/upload.vue";
-import Mine from "components/judePage/mine/mine.vue";
+const Register = () => import("../components/registerOrLogin/register")
+const Login = () => import("../components/registerOrLogin/login")
+const CustomerService = () => import("../components/registerOrLogin/customerService")
+const RegisterJudge = () => import("../components/registerOrLogin/home/register/registerJudge")
+const RegisterParty = () => import("../components/registerOrLogin/home/register/registerParty")
+const RegisterAgreement = () => import("../components/registerOrLogin/home/register/registerAgreement")
+const payPending = () => import("../components/privyPage/home/payPending")
+const noticing = () => import("../components/privyPage/home/noticing")
+const noticed = () => import("../components/privyPage/home/noticed")
+const privyindex = () => import("../components/privyPage/index")
+const privymine = () => import("../components/privyPage/mine")
+const privysearch = () => import("../components/privyPage/search.vue")
+const payPendingDetail = () => import("../components/privyPage/home/detail/payPendingDetail")
+const noticingDetail = () => import("../components/privyPage/home/detail/noticingDetail")
+const settingDetail = () => import("../components/privyPage/home/mineDetail/settingDetail")
+const updateName = () => import("../components/privyPage/home/mineDetail/updateName")
+const psdReset = () => import("../components/privyPage/home/mineDetail/psdReset")
+const changeNum = () => import("../components/privyPage/home/mineDetail/changeNum")
+const msgNoticeDetail = () => import("../components/privyPage/home/mineDetail/msgNoticeDetail")
+const msgReaded = () => import("../components/privyPage/home/mineDetail/msgReaded")
+const msgNoRead = () => import ("../components/privyPage/home/mineDetail/msgNoRead")
+const jugdeNotice = () => import ("../components/privyPage/home/mineDetail/jugdeNotice")
+const sever = () => import ("../components/privyPage/home/mineDetail/sever")
+const ForgetPassword = () => import ("../components/registerOrLogin/home/login/forgetPassword")
+const Heaving = () => import ("../components/judePage/judge/heaving.vue")
+const noHeaving = () => import ("../components/judePage/judge/noHeaving.vue")
+const Detail = () => import ("components/judePage/judge/detail/detail.vue")
+const Pay = () => import ("components/judePage/judge/pay/pay.vue")
+const Judge = () => import ("components/judePage/judge/judge.vue")
+const Search = () => import ("components/judePage/search/search.vue")
+const Upload = () => import ("components/judePage/upload/upload.vue")
+const Mine = () => import ("components/judePage/mine/mine.vue")
+const Footer = () => import ("@/components/common/footer/footer")
 
-import Footer from "@/components/common/footer/footer";
 export default new Router({
   routes: [
     //登录
