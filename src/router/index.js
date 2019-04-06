@@ -1,6 +1,6 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-Vue.use(Router)
+import Vue from "vue";
+import Router from "vue-router";
+Vue.use(Router);
 // ------------------------------LennieGao--------------------------------------------
 import Register from "../components/registerOrLogin/register";
 import Login from "../components/registerOrLogin/login";
@@ -26,16 +26,17 @@ import msgReaded from "../components/privyPage/home/mineDetail/msgReaded";
 import msgNoRead from "../components/privyPage/home/mineDetail/msgNoRead";
 import jugdeNotice from "../components/privyPage/home/mineDetail/jugdeNotice";
 import sever from "../components/privyPage/home/mineDetail/sever";
-import ForgetPassword from "../components/registerOrLogin/home/login/forgetPassword"
-import Heaving from '../components/judePage/judge/heaving.vue'
-import noHeaving from '../components/judePage/judge/noHeaving.vue'
-import Detail from 'components/judePage/judge/detail/detail.vue'
-import Pay from 'components/judePage/judge/pay/pay.vue'
-import Judge from 'components/judePage/judge/judge.vue'
-import Search from "components/judePage/search/search.vue"
-import Upload from 'components/judePage/upload/upload.vue'
-import Mine from 'components/judePage/mine/mine.vue'
+import ForgetPassword from "../components/registerOrLogin/home/login/forgetPassword";
+import Heaving from "../components/judePage/judge/heaving.vue";
+import noHeaving from "../components/judePage/judge/noHeaving.vue";
+import Detail from "components/judePage/judge/detail/detail.vue";
+import Pay from "components/judePage/judge/pay/pay.vue";
+import Judge from "components/judePage/judge/judge.vue";
+import Search from "components/judePage/search/search.vue";
+import Upload from "components/judePage/upload/upload.vue";
+import Mine from "components/judePage/mine/mine.vue";
 
+import Footer from "@/components/common/footer/footer";
 export default new Router({
   routes: [
     //登录
@@ -82,7 +83,12 @@ export default new Router({
     {
       path: "/privyindex",
       name: "privyindex",
-      component: privyindex,
+      // component: privyindex,
+      components: {
+        // 命名视图
+        default: privyindex,
+        footer: Footer
+      },
       // 首页里三个嵌套路由
       children: [
         {
@@ -124,12 +130,22 @@ export default new Router({
     {
       path: "/privysearch",
       name: "privysearch",
-      component: privysearch
+      // component: privysearch
+      components: {
+        // 命名视图
+        default: privysearch,
+        footer: Footer
+      }
     },
     {
       path: "/privymine",
       name: "privymine",
-      component: privymine,
+      // component: privymine,
+      components: {
+        // 命名视图
+        default: privymine,
+        footer: Footer
+      },
       children: [
         {
           path: "settingDetail",
@@ -254,4 +270,4 @@ export default new Router({
 // redirect: "/privyindex",
 // 模板
 
-//},   
+//},

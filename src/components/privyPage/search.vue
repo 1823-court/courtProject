@@ -1,148 +1,122 @@
 <template>
-    <div id="search">
-    <header>
-        <span class="notice">公告查询</span>
-        <input type="text" placeholder="请输入案号">
-         <img class='ser' src="../../common/img/search.png">
-    </header>
+  <div id="search">
+    <header>搜索</header>
+    <input type="text" class="searchs" placeholder="请输入查询案号 / 姓名">
+    <img src="@/common/img/mysousuo.png" class="mysousuo">
     <article>
-        <h5>已刊登的最新公告</h5>
+      <p class="title">已刊登最新公告</p>
       <div class="content" @click="goDetail()">
-      <img src="../../common/img/pic1.jpg">
-      <div class="tit">
-      <h4>公告名称：公司法人变更</h4>
-      <p>公告类别：开庭传票</p>
-      <p>案号（2017）桂0620民初668号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>当事人：张三三</span></p>
+        <div class="tit">
+          <h4>公告名称：公司法人变更</h4>
+          <p>公告类别：开庭传票</p>
+
+          <p>
+            当事人：
+            <span>张三三</span>
+          </p>
+          <p>案号（2017）桂0620民初668号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        </div>
+        <img src="@/common/img/content1.png">
       </div>
-      <span class="iconfont">&#xe64a;</span>
-    </div>
-      <div class="content" @click="goDetail()">
-      <img src="../../common/img/pic1.jpg">
-      <div class="tit">
-      <h4>公告名称：公司法人变更</h4>
-      <p>公告类别：开庭传票</p>
-      <p>案号（2017）桂0620民初668号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>当事人：张三三</span></p>
-      </div>
-      <span class="iconfont">&#xe64a;</span>
-    </div>
-      <div class="content" @click="goDetail()">
-      <img src="../../common/img/pic1.jpg">
-      <div class="tit">
-      <h4>公告名称：公司法人变更</h4>
-      <p>公告类别：开庭传票</p>
-      <p>案号（2017）桂0620民初668号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>当事人：张三三</span></p>
-      </div>
-      <span class="iconfont">&#xe64a;</span>
-    </div>
     </article>
     <ul class="botm">
-    <router-link tag="li" to="/privyindex" active-class='sel'>首页</router-link>
-    <router-link tag="li" to="/privysearch" active-class='sel'>搜索</router-link>
-    <router-link tag="li" to="/privymine" active-class='sel'>我的</router-link>
-  </ul>
-    </div>
+      <Footer></Footer>
+    </ul>
+  </div>
 </template>
 
 <script>
+import Footer from "@/components/common/footer/footer";
 export default {
-     methods: {
-    goDetail(){
-     this.$router.push({name:'payPendingDetail'})
-    }
+  components: {
+    Footer
   },
-}
+  methods: {
+    goDetail() {
+      this.$router.push({ name: "payPendingDetail" });
+    }
+  }
+};
 </script>
 
 <style lang="less" scoped>
-@import '../../common/css/index.less';
-@import '../../common/font/myfont.css';
-#search{
-    .w(375);
-    background: @mybgColor;
-    position: absolute;
-    top:0;
-    bottom:0;  
- header{
-   .w(340);
-   .h(45);
-   .l_h(45);
-   margin:27px auto;
-   background: #fff;
-   font-size:@fontSize-m;
-   .notice{
-   .w(57);
-   .h(45);
-   margin-left: 8px; 
-   margin-right: 8px;
-   }
-   input{
-    .w(238);
-   .h(28);
-   .l_h(28);
-   padding-left: 5px;
-  font-size:@fontSize-s;
-   }
-  .ser{
-    .w(20);
-    .h(20);
-    position: absolute;
-    top:41px;
-    right:54px;
-   }
-    }
-    article{
-      .w(375);
-      h5{
-         .w(200);
-         .h(24);
-         margin:0 auto;
-         text-align: center;
-        font-size:@fontSize-L;
-        color:red;
-        font-weight: 400;
-      }
-      .content{
+@import "../../common/css/index.less";
+@import "../../common/font/myfont.css";
+#search {
   .w(375);
-  .h(72);
-  margin-top: 8px;
-  padding-top:10px;
-  background: #fff;
-  font-size:@fontSize-s;
-  color:#000;
-  display: flex;
-  img{
-  .w(60);
-  .h(60);
-  margin-right: 16px;
-  }
-  .tit{
-    .l_h(20);
-  }
-}
-    }
-    .botm{
+  header {
     .w(375);
     .h(45);
-    position: fixed;
-    bottom:0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: #f8f8f8;
-    border-top: 1px solid #bbb;
-     .sel{
-      color: rgb(229, 28, 35);
-    }
-    li{
-      font-size:@fontSize-L;
-     color:@fontColornormal;
-    }
+    .l_h(45);
+    background: @indexFontcolor;
+    font-size: @fontSize-xL;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
   }
-  .iconfont{
-    .w(20);
-    .h(20);
+  .mysousuo {
+    position: absolute;
+    .w(25);
+    .h(25);
+    top: 67px;
+    right: 26px;
+  }
+  .searchs {
+    .w(347);
+    .h(35);
     position: relative;
-    top:20px;
+    background: #fff;
+    margin-left: 3.5%;
+    border-radius: 5px;
+    border: 0;
+    outline: 0;
+  }
+  ::-webkit-input-placeholder {
+    font-size: @fontSize-m;
+    color: #666;
+  }
+  article {
+    .w(375);
+    .title {
+      .w(300);
+      .h(35);
+      .l_h(35);
+      text-align: center;
+      margin: 0 auto;
+      color: @indexFontcolor;
+      font-size: @fontSize-xL;
+    }
+    .content {
+      .w(375);
+      .h(128);
+      margin-top: 8px;
+      padding-top: 10px;
+      background: #fff;
+      font-size: @fontSize-s;
+      display: flex;
+      h4 {
+        color: #333;
+        font-size: @fontSize-m;
+      }
+      p {
+        color: #666;
+        font-size: @fontSize-s;
+        span {
+          color: @indexFontcolor;
+        }
+      }
+      img {
+        .w(120);
+        .h(105);
+        margin-right: 16px;
+      }
+      .tit {
+        padding-top: 15px;
+        .w(249);
+        .l_h(20);
+        padding-left: 28px;
+      }
+    }
   }
 }
 </style>
