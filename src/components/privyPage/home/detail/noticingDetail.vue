@@ -22,7 +22,7 @@
         <p class="btomline">
           <span>北京朝阳第一法院</span>
         </p>
-        </div>
+      </div>
       <div class="line">
         <p class="tit">案件号：</p>
         <p class="btomline">
@@ -38,12 +38,12 @@
       <div class="line">
         <p class="tit">公告进展：</p>
         <p class="lastline">
-         <span class="">公告3天</span>
+          <span class>公告3天</span>
         </p>
       </div>
     </section>
     <footer>
-        <p @click="goPay()">去支付</p>
+      <p @click="goPay()">去支付</p>
     </footer>
   </div>
 </template>
@@ -55,8 +55,8 @@ export default {
       this.$router.go(-1);
       // this.$router.push("/privyindex/noticing");
     },
-    goPay(){
-      this.$router.push({name:'payPendingDetail'})
+    goPay() {
+      this.$router.push({ name: "payPendingDetail" });
     }
   },
   components: {}
@@ -70,7 +70,7 @@ export default {
   position: absolute;
   top: 0;
   bottom: 0;
-  z-index: 999;
+  z-index: 1300;
   background: @mybgColor;
   header {
     .w(375);
@@ -141,36 +141,34 @@ export default {
           display: inline-block;
           text-align: center;
         }
-       
       }
-       .lastline{
+      .lastline {
         .w(230);
         .h(28);
         text-align: left;
         font-size: @fontSize-s;
         color: @fontColornormal;
-        span{
-           position: relative;
+        span {
+          position: relative;
           bottom: -16px;
           margin: 0 auto;
           display: inline-block;
-       
         }
-        }
+      }
     }
   }
-   footer{
-      p{
-    .w(200);
-    .h(40);
-    margin: 0 auto;
-    background: @regbgorlor;
-    .l_h(40);
-    text-align: center;
-    color:#fff;
-     font-size: @fontSize-L;
-     margin-top: 25px;
-      }
+  footer {
+    p {
+      .w(200);
+      .h(40);
+      margin: 0 auto;
+      background: @regbgorlor;
+      .l_h(40);
+      text-align: center;
+      color: #fff;
+      font-size: @fontSize-L;
+      margin-top: 25px;
+    }
   }
 }
 </style>
