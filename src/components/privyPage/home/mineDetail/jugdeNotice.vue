@@ -54,7 +54,6 @@ export default {
      position: absolute;
      top:55px;
      bottom: 0;
-    //  background: salmon;
      img{
       .w(375);    
      }
