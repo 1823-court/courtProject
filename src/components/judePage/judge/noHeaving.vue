@@ -44,7 +44,7 @@ export default {
     },
     methods:{
         goDetail(){
-            this.$router.push('/judge/heaving/detail')
+            this.$router.push('/privyindex/payPending/payPendingDetail')
         },
         initScroll(){
             new BScroll('.warpper',{click:true})
