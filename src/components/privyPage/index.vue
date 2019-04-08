@@ -22,7 +22,6 @@
 
 <script>
 import Swiper from "swiper";
-
 import Footer from "@/components/common/footer/footer";
 import SearchInput from "@/components/common/searchInput/searchInput";
 export default {

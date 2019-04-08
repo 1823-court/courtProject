@@ -53,18 +53,16 @@ export default {
     .h(45);
     .l_h(45);
     text-align: center;
-    background: rgb(175, 97, 49);
-    color: #fff;
     font-size: @fontSize-xL;
     font-weight: 500;
     margin-bottom: 10px;
   }
   .icons {
-    .w(24);
-    .h(24);
+    .w(15);
+    .h(15);
     position: absolute;
-    top: 10px;
-    left: 5px;
+    top: 16px;
+    left: 20px;
   }
 
   form {
@@ -88,7 +86,7 @@ export default {
         .h(40);
         .l_h(40);
         text-align: center;
-        background: rgb(175, 97, 49);
+        background: rgba(36, 147, 237);
         color: #fff;
         font-size: @fontSize-s;
         border-radius: 5px;
@@ -107,25 +105,25 @@ export default {
         border: 1px solid rgb(141, 141, 141);
         border-radius: 5px;
       }
-       .eyes{
+      .eyes {
         .w(20);
         .h(20);
         position: absolute;
-        top:27px;
-        right:25px;
-          }
+        top: 27px;
+        right: 25px;
+      }
     }
   }
-  footer{
-   .w(180);
+  footer {
+    .w(180);
     .h(40);
     .l_h(40);
-   text-align: center;
-   background: rgb(175, 97, 49);
+    text-align: center;
+    background: rgba(36, 147, 237);
     color: #fff;
-   font-size:@fontSize-m;
-   margin: 60px auto;
-   border-radius: 5px;
+    font-size: @fontSize-m;
+    margin: 60px auto;
+    border-radius: 5px;
   }
 }
 </style>

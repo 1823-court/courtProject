@@ -64,7 +64,7 @@
       </div>
     </section>
     <footer>
-      <p>支付</p>
+      <p>支&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;付</p>
     </footer>
   </div>
 </template>
@@ -94,19 +94,17 @@ export default {
     .w(375);
     .h(48);
     .l_h(48);
-    background: @regbgorlor;
     text-align: center;
     h3 {
       font-size: @fontSize-xL;
-      color: #fff;
       font-weight: 400;
     }
     .icons {
-      .w(24);
-      .h(24);
+      .w(15);
+      .h(15);
       position: absolute;
-      top: 10px;
-      left: 5px;
+      top: 16px;
+      left: 20px;
     }
   }
   .line {
@@ -141,10 +139,10 @@ export default {
   }
   footer {
     p {
-      .w(200);
+      .w(269);
       .h(40);
       margin: 0 auto;
-      background: @regbgorlor;
+      background: rgba(36, 147, 237, 0.5);
       .l_h(40);
       text-align: center;
       color: #fff;

@@ -5,13 +5,22 @@
     </router-link>
 
     <router-link tag="li" to="/privysearch" active-class="sel">
-      <img src="@/common/img/footer2.png" alt>搜索
+      <img src="@/common/img/foot2.png" alt>搜索
     </router-link>
     <router-link tag="li" to="/privymine" active-class="sel">
       <img src="@/common/img/footer3.png" alt>我的
     </router-link>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      sel: false
+    };
+  }
+};
+</script>
 
 <style lang="less" scoped>
 @import "~@/common/css/index.less";

@@ -41,18 +41,18 @@ export default {
     .h(45);
     .l_h(45);
     text-align: center;
-    background: rgb(175, 97, 49);
+    background: rgba(36, 147, 237);
     color: #fff;
     font-size: @fontSize-xL;
     font-weight: 500;
     margin-bottom: 10px;
   }
   .icons {
-    .w(24);
-    .h(24);
+    .w(15);
+    .h(15);
     position: absolute;
-    top: 10px;
-    left: 5px;
+    top: 16px;
+    left: 20px;
   }
   .myTxt {
     .w(375);
@@ -79,7 +79,7 @@ export default {
     .h(40);
     .l_h(40);
     text-align: center;
-    background: rgb(175, 97, 49);
+    background: rgba(36, 147, 237);
     color: #fff;
     font-size: @fontSize-m;
     margin: 118px auto;

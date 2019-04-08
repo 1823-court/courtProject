@@ -2,39 +2,56 @@ import Vue from "vue";
 import Router from "vue-router";
 Vue.use(Router);
 // ------------------------------LennieGao--------------------------------------------
-const Register = () => import("../components/registerOrLogin/register")
-const Login = () => import("../components/registerOrLogin/login")
-const CustomerService = () => import("../components/registerOrLogin/customerService")
-const RegisterJudge = () => import("../components/registerOrLogin/home/register/registerJudge")
-const RegisterParty = () => import("../components/registerOrLogin/home/register/registerParty")
-const RegisterAgreement = () => import("../components/registerOrLogin/home/register/registerAgreement")
-const payPending = () => import("../components/privyPage/home/payPending")
-const noticing = () => import("../components/privyPage/home/noticing")
-const noticed = () => import("../components/privyPage/home/noticed")
-const privyindex = () => import("../components/privyPage/index")
-const privymine = () => import("../components/privyPage/mine")
-const privysearch = () => import("../components/privyPage/search.vue")
-const payPendingDetail = () => import("../components/privyPage/home/detail/payPendingDetail")
-const noticingDetail = () => import("../components/privyPage/home/detail/noticingDetail")
-const settingDetail = () => import("../components/privyPage/home/mineDetail/settingDetail")
-const updateName = () => import("../components/privyPage/home/mineDetail/updateName")
-const psdReset = () => import("../components/privyPage/home/mineDetail/psdReset")
-const changeNum = () => import("../components/privyPage/home/mineDetail/changeNum")
-const msgNoticeDetail = () => import("../components/privyPage/home/mineDetail/msgNoticeDetail")
-const msgReaded = () => import("../components/privyPage/home/mineDetail/msgReaded")
-const msgNoRead = () => import ("../components/privyPage/home/mineDetail/msgNoRead")
-const jugdeNotice = () => import ("../components/privyPage/home/mineDetail/jugdeNotice")
-const sever = () => import ("../components/privyPage/home/mineDetail/sever")
-const ForgetPassword = () => import ("../components/registerOrLogin/home/login/forgetPassword")
-const Heaving = () => import ("../components/judePage/judge/heaving.vue")
-const noHeaving = () => import ("../components/judePage/judge/noHeaving.vue")
-const Detail = () => import ("components/judePage/judge/detail/detail.vue")
-const Pay = () => import ("components/judePage/judge/pay/pay.vue")
-const Judge = () => import ("components/judePage/judge/judge.vue")
-const Search = () => import ("components/judePage/search/search.vue")
-const Upload = () => import ("components/judePage/upload/upload.vue")
-const Mine = () => import ("components/judePage/mine/mine.vue")
-const Footer = () => import ("@/components/common/footer/footer")
+const Register = () => import("../components/registerOrLogin/register");
+const Login = () => import("../components/registerOrLogin/login");
+const CustomerService = () =>
+  import("../components/registerOrLogin/customerService");
+const RegisterJudge = () =>
+  import("../components/registerOrLogin/home/register/registerJudge");
+const RegisterParty = () =>
+  import("../components/registerOrLogin/home/register/registerParty");
+const RegisterAgreement = () =>
+  import("../components/registerOrLogin/home/register/registerAgreement");
+const payPending = () => import("../components/privyPage/home/payPending");
+const noticing = () => import("../components/privyPage/home/noticing");
+const noticed = () => import("../components/privyPage/home/noticed");
+const privyindex = () => import("../components/privyPage/index");
+const privymine = () => import("../components/privyPage/mine");
+const privysearch = () => import("../components/privyPage/search.vue");
+const payPendingDetail = () =>
+  import("../components/privyPage/home/detail/payPendingDetail");
+const noticingDetail = () =>
+  import("../components/privyPage/home/detail/noticingDetail");
+const nopayingDetail = () =>
+  import("../components/privyPage/home/detail/nopayingDetail");
+const settingDetail = () =>
+  import("../components/privyPage/home/mineDetail/settingDetail");
+const updateName = () =>
+  import("../components/privyPage/home/mineDetail/updateName");
+const psdReset = () =>
+  import("../components/privyPage/home/mineDetail/psdReset");
+const changeNum = () =>
+  import("../components/privyPage/home/mineDetail/changeNum");
+const msgNoticeDetail = () =>
+  import("../components/privyPage/home/mineDetail/msgNoticeDetail");
+const msgReaded = () =>
+  import("../components/privyPage/home/mineDetail/msgReaded");
+const msgNoRead = () =>
+  import("../components/privyPage/home/mineDetail/msgNoRead");
+const jugdeNotice = () =>
+  import("../components/privyPage/home/mineDetail/jugdeNotice");
+const sever = () => import("../components/privyPage/home/mineDetail/sever");
+const ForgetPassword = () =>
+  import("../components/registerOrLogin/home/login/forgetPassword");
+const Heaving = () => import("../components/judePage/judge/heaving.vue");
+const noHeaving = () => import("../components/judePage/judge/noHeaving.vue");
+const Detail = () => import("components/judePage/judge/detail/detail.vue");
+const Pay = () => import("components/judePage/judge/pay/pay.vue");
+const Judge = () => import("components/judePage/judge/judge.vue");
+const Search = () => import("components/judePage/search/search.vue");
+const Upload = () => import("components/judePage/upload/upload.vue");
+const Mine = () => import("components/judePage/mine/mine.vue");
+const Footer = () => import("@/components/common/footer/footer");
 
 export default new Router({
   routes: [
@@ -83,6 +100,9 @@ export default new Router({
       path: "/privyindex",
       name: "privyindex",
       // component: privyindex,
+      // beforeEnter:(to,from,next)=>{
+
+      // },
       components: {
         // 命名视图
         default: privyindex,
@@ -118,7 +138,14 @@ export default new Router({
         {
           path: "noticed",
           name: "noticed",
-          component: noticed
+          component: noticed,
+          children: [
+            {
+              path: "nopayingDetail",
+              name: "nopayingDetail",
+              component: nopayingDetail
+            }
+          ]
         },
         {
           path: "/",
