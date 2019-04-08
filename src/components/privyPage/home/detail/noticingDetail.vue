@@ -6,9 +6,9 @@
     </header>
     <article>
       <p>版面照片：</p>
-      <img class="pic" src="../../../../common/img/pic1.jpg">
-      <img class="pic" src="../../../../common/img/pic1.jpg">
-      <img class="pic" src="../../../../common/img/pic1.jpg">
+      <img class="pic" src="../../../../common/img/con1.png">
+      <img class="pic" src="../../../../common/img/con1.png">
+      <img class="pic" src="../../../../common/img/con1.png">
     </article>
     <section>
       <div class="line">
@@ -76,19 +76,17 @@ export default {
     .w(375);
     .h(46);
     .l_h(46);
-    background: @regbgorlor;
     text-align: center;
     h3 {
       font-size: @fontSize-xL;
-      color: #fff;
       font-weight: 400;
     }
     .icons {
-      .w(24);
-      .h(24);
+      .w(15);
+      .h(15);
       position: absolute;
-      top: 10px;
-      left: 5px;
+      top: 16px;
+      left: 21px;
     }
   }
   article {
@@ -96,8 +94,8 @@ export default {
     .h(200);
     margin: 20px auto;
     p {
-      font-size: @fontSize-m;
-      color: @fontColornormal;
+      font-size: @fontSize-L;
+      color: rgb(51, 51, 51);
       margin-bottom: 18px;
     }
     .pic {
@@ -118,25 +116,24 @@ export default {
       justify-content: center;
       align-items: center;
       .tit {
-        .w(76);
+        .w(86);
         .h(28);
         .l_h(28);
         text-align: left;
         margin-bottom: -20px;
-        font-size: @fontSize-m;
-        color: @fontColornormal;
+        font-size: @fontSize-L;
+        color: rgb(51, 51, 51);
       }
       .btomline {
         .w(230);
         .h(28);
-        // position: relative;
-        border-bottom: 2px solid #ddd;
+        border-bottom: 1px solid rgb(216, 216, 216);
         text-align: center;
-        font-size: @fontSize-s;
-        color: @fontColornormal;
+        font-size: @fontSize-m;
+        color: rgb(102, 102, 102);
         span {
           position: relative;
-          bottom: -13px;
+          bottom: -8px;
           margin: 0 auto;
           display: inline-block;
           text-align: center;
@@ -146,8 +143,8 @@ export default {
         .w(230);
         .h(28);
         text-align: left;
-        font-size: @fontSize-s;
-        color: @fontColornormal;
+        font-size: @fontSize-m;
+        color: rgb(102, 102, 102);
         span {
           position: relative;
           bottom: -16px;
@@ -159,10 +156,10 @@ export default {
   }
   footer {
     p {
-      .w(200);
+      .w(269);
       .h(40);
       margin: 0 auto;
-      background: @regbgorlor;
+      background: rgba(36, 147, 237);
       .l_h(40);
       text-align: center;
       color: #fff;

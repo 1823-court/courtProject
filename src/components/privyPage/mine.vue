@@ -1,7 +1,12 @@
 <template>
   <div id="mine">
     <router-view></router-view>
-    <header>我的</header>
+    <header class="header">
+      <div>
+        <img src="../../common/img/ban3.png" alt>
+        <p class="choose">登录 / 注册</p>
+      </div>
+    </header>
     <ul class="items">
       <li @click="goSetting()">设置</li>
       <div id="iconfont1">
@@ -55,19 +60,39 @@ export default {
 @import "../../common/font/myfont.css";
 #mine {
   .w(375);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  header {
+  // position: absolute;
+  // top: 0;
+  // bottom: 0;
+  .header {
     .w(375);
-    .h(45);
-    .l_h(45);
-    text-align: center;
-    background: rgb(175, 97, 49);
-    color: #fff;
-    font-size: @fontSize-xL;
-    font-weight: 500;
-    margin-bottom: 10px;
+    .h(163);
+    background: url("../../common/img/ban.png") no-repeat;
+    div {
+      color: #fff;
+      font-size: @fontSize-xL;
+      margin-bottom: 10px;
+      img {
+        .w(57);
+        .h(57);
+        position: absolute;
+        z-index: 100;
+        left: 45%;
+        top: 4%;
+      }
+      .choose {
+        .w(115);
+        .h(22);
+        .l_h(22);
+        color: #fff;
+        font-size: @fontSize-m;
+        border: 1px solid #fff;
+        text-align: center;
+        position: absolute;
+        left: 38%;
+        top: 14%;
+        border-radius: 10px;
+      }
+    }
   }
   .items {
     .w(375);
@@ -85,7 +110,7 @@ export default {
       .w(40);
       .h(40);
       position: absolute;
-      top: 46px;
+      top: 162px;
       right: 0px;
       .iconfont {
         .w(15);
@@ -97,21 +122,21 @@ export default {
       .w(40);
       .h(40);
       position: absolute;
-      top: 96px;
+      top: 214px;
       right: 0px;
     }
     #iconfont3 {
       .w(40);
       .h(40);
       position: absolute;
-      top: 146px;
+      top: 265px;
       right: 0px;
     }
     #iconfont4 {
       .w(40);
       .h(40);
       position: absolute;
-      top: 196px;
+      top: 313px;
       right: 0px;
     }
   }
@@ -120,7 +145,7 @@ export default {
     .h(40);
     .l_h(40);
     text-align: center;
-    background: rgb(175, 97, 49);
+    background: rgba(36, 147, 237);
     color: #fff;
     font-size: @fontSize-m;
     margin: 0 auto;

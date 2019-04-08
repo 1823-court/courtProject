@@ -20,7 +20,9 @@
 export default {
   methods: {
     goDetail() {
-      this.$router.push({ name: "noticingDetail" });
+      this.$router.push({
+        name: "nopayingDetail"
+      });
     }
   },
   components: {}
