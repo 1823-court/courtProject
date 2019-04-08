@@ -6,17 +6,11 @@
 				<div class="title">{{title}}</div>
 			</div>
 			<div class="register_input">
-
-
 				<input type="text" placeholder="请输入你的手机号" class="phoneNumber" /><br>
 				<input type="text" placeholder="请输入你的验证码" class="verificationCode" />&nbsp;&nbsp;&nbsp;&nbsp;<button class="btnclick">获取验证码</button><br>
 				<input type="password" placeholder="请输入密码" class="password"><br>
 				<input type="password" placeholder="请输入确认密码" class="oncePassword"><br>
-
 				<input type="submit" value="确认" class="register" /><br>
-				<!-- <Radio v-model="single">Radio</Radio> -->
-
-
 			</div>
 
 		</div>

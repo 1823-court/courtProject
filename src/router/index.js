@@ -3,12 +3,22 @@ import Router from 'vue-router'
 Vue.use(Router)
 // ------------------------------LennieGao--------------------------------------------
 import Register from "../components/registerOrLogin/register";
-import Login from "../components/registerOrLogin/login";
 import CustomerService from "../components/registerOrLogin/customerService";
 // ---register
 import RegisterJudge from "../components/registerOrLogin/home/register/registerJudge";
 import RegisterParty from "../components/registerOrLogin/home/register/registerParty";
 import RegisterAgreement from "../components/registerOrLogin/home/register/registerAgreement";
+import RegisterSpecification from "../components/registerOrLogin/home/register/registerSpecification";
+
+
+// ---login
+import LoginJudge from "../components/registerOrLogin/home/login/loginJudge";
+import LoginParty from "../components/registerOrLogin/home/login/loginParty";
+import LoginShortMessage from "../components/registerOrLogin/home/login/loginShortMessage";
+import LoginPartyMessage from "../components/registerOrLogin/home/login/loginPartyMessage";
+
+
+
 import payPending from "../components/privyPage/home/payPending";
 import noticing from "../components/privyPage/home/noticing";
 import noticed from "../components/privyPage/home/noticed";
@@ -59,11 +69,34 @@ export default new Router({
       name: "registerAgreement",
       component: RegisterAgreement,
     },
-    {
-      path: "/login",
-      name: "login",
-      component: Login
-    },
+		{
+		  path: "/registerSpecification",
+		  name: "registerSpecification",
+		  component: RegisterSpecification,
+		},
+		
+
+		//----------------------login--------
+		  {
+		  path: "/loginJudge",
+		  name: "loginJudge",
+		  component: LoginJudge
+		},
+		  {
+		  path: "/loginParty",
+		  name: "loginParty",
+		  component: LoginParty
+		},
+		  {
+		  path: "/loginShortMessage",
+		  name: "loginShortMessage",
+		  component: LoginShortMessage
+		},
+		 {
+		  path: "/loginPartyMessage",
+		  name: "loginPartyMessage",
+		  component: LoginPartyMessage
+		},
     {
       path: "/forgetPassword",
       name: "forgetPassword",

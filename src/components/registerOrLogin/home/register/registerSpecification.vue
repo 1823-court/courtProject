@@ -30,7 +30,7 @@
 		methods: {
 			goBackOk(){
 				// alert('等待跳转')
-				this.$router.push('/registerJudge')
+				this.$router.push('/registerParty')
 
 			},
 			goBackTo(){
