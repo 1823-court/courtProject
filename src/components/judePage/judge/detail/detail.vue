@@ -1,25 +1,27 @@
 <template>
     <div class="detail" >
-        <img  @click='goBack' class='arrow_left' src="../../../../common/img/arrow-left.png" alt="">
+        <img  @click='goBack' class='arrow_left' src="../../../../common/img/arrow_left@2x.png" alt="">
         <div class="ann_detail">
           公告详情
         </div>
         <!-- <Dheader>{{title}}</Dheader> -->
         <div class="ann_center">
+            <div class="gray"></div>
             <p class="space_pic">版面照片：</p>
             <div class="img_box">
-                <img src="../../../../common/img/okc.jpg" alt="">
-                <img src="../../../../common/img/okc.jpg" alt="">
-                <img src="../../../../common/img/okc.jpg" alt="">
+                <img src="../../../../common/img/content_pic@2x.png" alt="">
+                <img src="../../../../common/img/content_pic@2x.png" alt="">
+                <img src="../../../../common/img/content_pic@2x.png" alt="">
             </div>
             <div class="detail_p">
                 <p>公告类别：<span>开庭传票</span></p>
-                <p>公告类别：<span>开庭传票</span></p>
-                <p>公告类别：<span>开庭传票</span></p>
-                <p>公告类别：<span>开庭传票</span></p>
-                <div class="ann_time">公告进展：公告三天</div>
+                <p>法院名称：<span>北京朝阳第一人民法院</span></p>
+                <p>案 件 号 ：<span>(2017)桂0602民初668</span></p>
+                <p>当 事 人 ：<span>欧阳三十</span></p>
+                <p>公告进展：<span class="ann_time">公告3天</span></p>
+                
             </div>
-            <div class="pay" @click='goPay'>去支付</div>
+            
             <router-view></router-view>
         </div>
     </div>
@@ -51,27 +53,39 @@ export default {
     background: white;
     z-index: 3;
     .arrow_left{
-        .w(30);
-        .h(30);
-        background: @d-headerColor;
+        .w(9);
+        .h(16);
+       // background: @d-headerColor;
         position: absolute;
-        top: 6px;
-        left: 10px;
+        top: 14px;
+        left: 20px;
     };
     .ann_detail{
-        .h(45);
-        background: yellowgreen;
-        font-size: @fontSize-L;
+        .h(44);
+        //background: yellowgreen;
+        font-size: 17px;
+        font-weight: 800;
         text-align: center;
         .l_h(45);
-        color:@selfontColor;        
+        color:rgb(51,51,51);        
     };
     .ann_center{
+       
         .img_box{
             margin-left: 20px;
+            
+            img{
+                .h(106);
+                .w(78);
+                margin-right: 28px;
+            }
+        }
+        .gray{
+            .h(10);
+            background:rgb(245,245,245);
         }
         .space_pic{
-        font-size: @fontSize-m;
+        font-size: @fontSize-L;
         margin:10px 20px;
         }
         img{
@@ -83,30 +97,23 @@ export default {
             margin-left: 20px;
             font-size: @fontSize-m;
             //background: red;
-            margin-top: 15px;
+            margin-top: 30px;
             p{
-                margin-bottom: 15px;
+                margin-bottom: 25px;
             }
             span{
                 //background: blue;
                 display: inline-block;
                 .w(230);
                 .h(27);
-                border-bottom: 1px solid gray;
+                color:  rgb(102,102,102);
+                border-bottom: 1px solid rgb(216,216,216);
                 text-align: center;
             }
-        }
-        .pay{
-             .w(200);
-            .h(45);
-            background: green;
-    
-            margin-left: 90px;
-            margin-top: 20px;
-            font-size: @fontSize-L;
-            text-align: center;
-            .l_h(45);
-            color:@selfontColor; 
+            .ann_time{
+                border-bottom:none;
+                text-align: left;
+            }
         }
     }
 }
