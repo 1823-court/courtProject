@@ -11,10 +11,10 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/qqmusic':{//api暗号
-        target:'https://c.y.qq.com',//要转发的目标路径
+      '/register':{//api暗号
+        target:'47.94.236.249:8080',//要转发的目标路径
         changeOrigin:true,//改变请求源
-        pathRewrite:{'^/qqmusic':''}//路径重写
+        pathRewrite:{'^/register':''}//路径重写
       },
       '/hy':{//api暗号
         target:'http://ustbhuangyi.com',//要转发的目标路径

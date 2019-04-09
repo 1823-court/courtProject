@@ -2,16 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 Vue.use(Router);
 // ------------------------------LennieGao--------------------------------------------
-const Register = () => import("../components/registerOrLogin/register");
-const Login = () => import("../components/registerOrLogin/login");
-const CustomerService = () =>
-  import("../components/registerOrLogin/customerService");
-const RegisterJudge = () =>
-  import("../components/registerOrLogin/home/register/registerJudge");
-const RegisterParty = () =>
-  import("../components/registerOrLogin/home/register/registerParty");
-const RegisterAgreement = () =>
-  import("../components/registerOrLogin/home/register/registerAgreement");
+
 const payPending = () => import("../components/privyPage/home/payPending");
 const noticing = () => import("../components/privyPage/home/noticing");
 const noticed = () => import("../components/privyPage/home/noticed");
@@ -53,6 +44,21 @@ const Upload = () => import("components/judePage/upload/upload.vue");
 const Mine = () => import("components/judePage/mine/mine.vue");
 const Footer = () => import("@/components/common/footer/footer");
 
+import Register from "../components/registerOrLogin/register";
+import CustomerService from "../components/registerOrLogin/customerService";
+// ---register
+import RegisterJudge from "../components/registerOrLogin/home/register/registerJudge";
+import RegisterParty from "../components/registerOrLogin/home/register/registerParty";
+import RegisterAgreement from "../components/registerOrLogin/home/register/registerAgreement";
+import RegisterSpecification from "../components/registerOrLogin/home/register/registerSpecification";
+
+
+// ---login
+import LoginJudge from "../components/registerOrLogin/home/login/loginJudge";
+import LoginParty from "../components/registerOrLogin/home/login/loginParty";
+import LoginShortMessage from "../components/registerOrLogin/home/login/loginShortMessage";
+import LoginPartyMessage from "../components/registerOrLogin/home/login/loginPartyMessage"
+
 export default new Router({
   routes: [
     //登录
@@ -76,11 +82,34 @@ export default new Router({
       name: "registerAgreement",
       component: RegisterAgreement
     },
-    {
-      path: "/login",
-      name: "login",
-      component: Login
-    },
+		{
+		  path: "/registerSpecification",
+		  name: "registerSpecification",
+		  component: RegisterSpecification,
+		},
+		
+
+		//----------------------login--------
+		  {
+		  path: "/loginJudge",
+		  name: "loginJudge",
+		  component: LoginJudge
+		},
+		  {
+		  path: "/loginParty",
+		  name: "loginParty",
+		  component: LoginParty
+		},
+		  {
+		  path: "/loginShortMessage",
+		  name: "loginShortMessage",
+		  component: LoginShortMessage
+		},
+		 {
+		  path: "/loginPartyMessage",
+		  name: "loginPartyMessage",
+		  component: LoginPartyMessage
+		},
     {
       path: "/forgetPassword",
       name: "forgetPassword",

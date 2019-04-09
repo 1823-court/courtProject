@@ -9,8 +9,11 @@ import "../node_modules/swiper/dist/css/swiper.min.css";
 import Axios from "./axios";
 import store from "./store";
 Vue.prototype.$axios = Axios;
+import iView from 'iview';
+import 'iview/dist/styles/iview.css';
+import $ from 'jquery';
 Vue.config.productionTip = false;
-
+Vue.use(iView);
 //图片懒加载
 import LazyLoad from "vue-lazyload";
 Vue.use(LazyLoad, {
@@ -19,6 +22,9 @@ Vue.use(LazyLoad, {
   //   attempt: 1  // 每次加载几张
 });
 /* eslint-disable no-new */
+
+
+
 new Vue({
   el: "#app",
   router,
