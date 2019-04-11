@@ -19,7 +19,7 @@
 				<router-link tag="a" to="/loginShortMessage">忘记密码</router-link>
 				<hr>
 
-				<input type="submit" value="登录" class="register" /><br>
+				<input type="button" value="登录" class="register"  @click="gojudge"/><br>
 				<router-link tag="a" to="/loginShortMessage">短信验证登录</router-link>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<router-link tag="a" to="/registerAgreement">立即注册</router-link>
 
@@ -67,6 +67,9 @@
 					this.tips2 = false;
 				}
 			},
+			gojudge(){
+				this.$router.push({path:'/judge/heaving'})
+			}
 		}
 	}
 </script>
