@@ -1,138 +1,145 @@
 <template>
 	<div class="box">
-	<img src="../../assets/logo.png">
-	<div class="modal" v-show="show">
-		<div class="modalFrame">
-			<div class="modalF"><a @click='goDetail()'>法官</a></div>
-			<div class="modalF"><a @click='goParty()'>当事人</a></div>
+		<div class="modal">
+			<div class="modalFrame">
+				<div class="modalFT" v-show="dragone">
+					<img src="../../common/img/icon2@2x.png" alt="">
+					<a @click="go()">我是法官</a>
+				</div>
+				<div class="circular" v-show="dragfirst">
+					<div class="circular_r" @click="goDetail">注册</div>
+					<div class="circular_l" @click="goJudge">登录</div>
+				</div>
+				<div class="modalFB" v-show="dragtwo">
+					<img src="../../common/img/icon1@2x.png" alt="">
+					<a @click="goTo()">我是当事人</a>
+				</div>
+				<div class="circular" v-show="dragsecond">
+					<div class="circular_r" @click="goPeople">注册</div>
+					<div class="circular_l" @click="goParty">登录</div>
+				</div>
+			</div>
 		</div>
-		<!-- <RegisterJudge></RegisterJudge> -->
-	</div>
-	<div class="tab">
-
-		<ul>
-			<li v-for="(item,index) in tabBar" :key=index>
-				<router-link :to="item.path">
-					<span @click="handleAppear()">{{item.name}}</span>
-				</router-link>
-
-			</li>
-		</ul>
-	</div>
 	</div>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				show:false
-				,
-				tabBar: [{
-						name: "注册",
-						path: "/register"
-					},
-					{
-						name: "登录",
-						path: "/login"
-					},
-					{
-						name: "客服",
-						path: "/customerService"
-					},
-
-				]
-			}
+export default {
+	data() {
+		return {
+			show: false,
+			dragone: true,
+			dragtwo: true,
+			dragfirst: false,
+			dragsecond: false
+		};
+	},
+	methods: {
+		handleAppear() {
+			this.show = !this.show;
 		},
-		methods: {
-			handleAppear(){
-				this.show=!this.show
-			},
-			handleToggle(index) {
-				this.$emit("handleToggle", index)
-			},
-			goDetail() {
-				console.log('跳转')
-				this.$router.push('/registerJudge')
-				// alert(2222)
-			},
-			goParty() {
-				console.log('跳转')
-				this.$router.push('/registerParty')
-				// alert(2222)
-			}
-			
+		handleToggle(index) {
+			this.$emit('handleToggle', index);
+		},
+		go() {
+			console.log('跳转');
+			this.dragone = !this.dragone;
+			this.dragfirst = !this.dragfirst;
+			this.dragtwo = true;
+			this.dragsecond = false;
+		},
+		goTo() {
+			console.log('跳转');
+			this.dragtwo = !this.dragtwo;
+			this.dragsecond = !this.dragsecond;
+			this.dragone = true;
+			this.dragfirst = false;
+		},
+		goDetail() {
+			this.$router.push('/registerJudge');
+		},
+		goPeople() {
+			this.$router.push('/registerParty');
+		},
+		goJudge() {
+			this.$router.push('/LoginJudge');
+		},
+		goParty() {
+			this.$router.push('/LoginParty');
 		}
 	}
+};
 </script>
 
 <style lang="less" scoped="">
 @import '../../common/css/index.less';
-	img{
-		margin-left: 90px;
-		margin-top: 30px
-	}
+img{
+	display: inline-block;
+	.w(20);
+	.h(20);
+	margin-right: 10px;
+	
+}
+.modal {
+	.w(375);
+	.h(667);
+	background: blueviolet;
+	background: url(../../common/img/beijing@2x.png);
+	-moz-background-size: 40% 100%;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
 
-	.tab {
+	.modalFrame {
 		.w(375);
-		.h(100);
+		font-size: 16px;
 		position: fixed;
-		bottom: 0;
-		color: #fff;
-		ul {
-			width: 100%;
-			height: 100%;
-			display: flex;
-			justify-content:space-around;
-			li{
-				.w(50);
-				.h(50);
-				border-radius: 50%;
-				background: gold;
-			}
-			a {
-				width: 100%;
-				height: 100%;
-		
-				display: flex;
-				flex-direction: column;
-				justify-content: space-around;
-				align-items: center;
-				font-size: @fontSize-L;
-			}
-
-		}
-	}
-	
-	
-	.modal {
-		.w(375);
-		.h(300);
+		bottom: 112px;
 		display: flex;
-		justify-content: space-around;
+		flex-direction: column;
 		align-items: center;
-	
-		.modalFrame {
-			.w(280);
-			.h(150);
-			background: blueviolet;
+		text-align: center;
+		.modalFT {
+			.w(267);
+			.h(37);
+			background: #fff;
+			.l_h(37);
+			border-radius:18px; 
+			a{
+				color: #2493ed;
+				display: inline-block;
+			}
+		}
+		.circular {
 			display: flex;
-			justify-content: space-around;
-			align-items: center;
-			background: blueviolet;
-			font-size: 16px;
-			
-	
-			.modalF {
+			flex-direction: row;
+			.circular_r,
+			.circular_l {
 				.w(50);
 				.h(50);
 				.l_h(50);
+				background: #fff;
 				border-radius: 50%;
-				background: gold;
-				text-align: center
+				margin-top: 20px;
 			}
-	
+			.circular_r {
+				margin-right: 30px;
+			}
+			.circular_l {
+				margin-left: 30px;
+			}
+		}
+		.modalFB {
+			.w(267);
+			.h(37);
+			background: #fff;
+			margin-top: 22px;
+			.l_h(37);
+			border-radius:18px; 
+			a{
+				color: #ec6d5e;
+				display: inline-block;
+			}
 		}
 	}
-	
+}
 </style>
