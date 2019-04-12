@@ -54,7 +54,7 @@ header{
         border: 0;
         text-indent: 36px;
         outline: none;
-
+        margin-top:20px;
     }
     img{
        .w(20);
