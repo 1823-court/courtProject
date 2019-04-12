@@ -1,7 +1,12 @@
 <template>
     <div id="mine">
-      <!-- <router-view></router-view> -->
-      <header>我的</header>
+     <router-view></router-view>
+    <header class="header">
+      <div>
+        <img src="../../../common/img/ban3.png" alt>
+        <p class="choose" @click="goindex">登录 / 注册</p>
+      </div>
+    </header>
       <ul class="items">
         <li @click="goSetting()">设置</li><div id='iconfont1'><span class="iconfont">&#xe64a;</span></div>
         <li @click="goNotice()">消息通知</li><div id='iconfont2'><span class="iconfont">&#xe64a;</span></div>
@@ -31,6 +36,9 @@ export default {
       },
       sever(){
         this.$router.push({name:'sever'})
+      },
+      goindex(){
+        this.$router.push({name:"register"})
       }
     },
 }
@@ -39,80 +47,99 @@ export default {
 <style lang="less" scoped>
 @import '../../../common/css/index.less';
 @import '../../../common/font/myfont.css';
-#mine{
+#mine {
+  .w(375);
+  // position: absolute;
+  // top: 0;
+  // bottom: 0;
+  .header {
     .w(375);
-    position: absolute;
-    top:0;
-    bottom: 0;
- header{
-   .w(375);
-   .h(45);
-   .l_h(45);
-   text-align: center;
-   background: rgb(175, 97, 49);
-   color: #fff;
-   font-size:@fontSize-xL;
-   font-weight: 500;
-   margin-bottom: 10px;
- }
- .items{
-.w(375);
-.h(40);
-.l_h(40);
-li{
-.w(375);
- font-size:@fontSize-m;
- color:#000;
- background: #fff;
- margin-bottom: 10px;
- padding-left: 24px;
-}
-#iconfont1{
-  .w(40);
-  .h(40);
-   position: absolute;
-   top:46px;
-   right:0px;
-.iconfont{
-  .w(15);
-  .h(15);
-   display: inline-block;
-     }
- }
- #iconfont2{
-  .w(40);
-  .h(40);
-   position: absolute;
-   top:96px;
-   right:0px;
- }
- #iconfont3{
-  .w(40);
-  .h(40);
-   position: absolute;
-   top:146px;
-   right:0px;
- }
- #iconfont4{
-  .w(40);
-  .h(40);
-   position: absolute;
-   top:196px;
-   right:0px;
- }
- }
- footer{
-   .w(300);
+    .h(163);
+    background: url("../../../common/img/ban.png") no-repeat;
+    div {
+      color: #fff;
+      font-size: @fontSize-xL;
+      margin-bottom: 10px;
+      img {
+        .w(57);
+        .h(57);
+        position: absolute;
+        z-index: 100;
+        left: 45%;
+        top: 4%;
+      }
+      .choose {
+        .w(115);
+        .h(22);
+        .l_h(22);
+        color: #fff;
+        font-size: @fontSize-m;
+        border: 1px solid #fff;
+        text-align: center;
+        position: absolute;
+        left: 38%;
+        top: 14%;
+        border-radius: 10px;
+      }
+    }
+  }
+  .items {
+    .w(375);
     .h(40);
     .l_h(40);
-   text-align: center;
-   background: rgb(175, 97, 49);
+    li {
+      .w(375);
+      font-size: @fontSize-m;
+      color: #000;
+      background: #fff;
+      margin-bottom: 10px;
+      padding-left: 24px;
+    }
+    #iconfont1 {
+      .w(40);
+      .h(40);
+      position: absolute;
+      top: 162px;
+      right: 0px;
+      .iconfont {
+        .w(15);
+        .h(15);
+        display: inline-block;
+      }
+    }
+    #iconfont2 {
+      .w(40);
+      .h(40);
+      position: absolute;
+      top: 214px;
+      right: 0px;
+    }
+    #iconfont3 {
+      .w(40);
+      .h(40);
+      position: absolute;
+      top: 265px;
+      right: 0px;
+    }
+    #iconfont4 {
+      .w(40);
+      .h(40);
+      position: absolute;
+      top: 313px;
+      right: 0px;
+    }
+  }
+  footer {
+    .w(300);
+    .h(40);
+    .l_h(40);
+    text-align: center;
+    background: rgba(36, 147, 237);
     color: #fff;
-   font-size:@fontSize-m;
-   margin: 0 auto;
-   position: relative;
-   bottom: -417px;
- }
-    
+    font-size: @fontSize-m;
+    margin: 0 auto;
+    position: relative;
+    bottom: -417px;
+  }
 }
 </style>

@@ -1,1 +1,8 @@
-export default {"code":0,"data":{"slider":[{"linkUrl":"https://y.qq.com/m/act/singer2019/index.html?openinqqmusic=1&ADTAG=jiaodiantu&channelID=10000362","picUrl":"http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1215722.jpg","id":20263},{"linkUrl":"https://y.qq.com/m/act/yuanchuang2019/index.html?openinqqmusic=1&ADTAG=jiaodiantu&channelID=10032187","picUrl":"http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1217286.jpg","id":20298},{"linkUrl":"https://y.qq.com/m/act/classic2/index.html?openinqqmusic=1&ADTAG=jiaodiantu","picUrl":"http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1217342.jpg","id":20301},{"linkUrl":"https://y.qq.com/m/digitalbum/gold/index.html?openinqqmusic=1_video=true&id=6475877&g_f=shoujijiaodian","picUrl":"http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1217460.jpg","id":20333},{"linkUrl":"http://y.qq.com/w/album.html?albummid=0006BiBp0z1kDk","picUrl":"http://y.gtimg.cn/music/common/upload/MUSIC_FOCUS/1215073.jpg","id":20300}],"radioList":[{"picUrl":"http://y.gtimg.cn/music/photo/radio/track_radio_199_13_1.jpg","Ftitle":"热歌","radioid":199},{"picUrl":"http://y.gtimg.cn/music/photo/radio/track_radio_307_13_1.jpg","Ftitle":"一人一首招牌歌","radioid":307}],"songList":[]}}
+export default {
+        pic:[
+           '../../../../common/img/banner1.png',
+           '../../../../common/img/banner2.png',
+           '../../../../common/img/banner3.png',         
+        ]
+    
+}

@@ -4,7 +4,7 @@
     <header class="header">
       <div>
         <img src="../../common/img/ban3.png" alt>
-        <p class="choose">登录 / 注册</p>
+        <p class="choose" @click="goindex">登录 / 注册</p>
       </div>
     </header>
     <ul class="items">
@@ -50,6 +50,9 @@ export default {
     },
     sever() {
       this.$router.push({ name: "sever" });
+    },
+    goindex(){
+      this.$router.push({name : "register"})
     }
   }
 };

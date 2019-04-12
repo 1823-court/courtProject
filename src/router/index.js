@@ -294,7 +294,14 @@ export default new Router({
         {
           path: "noHeaving",
           name: "noHeaving",
-          component: noHeaving
+          component: noHeaving,
+          children:[
+            {
+              path:"payPendingDetail",
+              component: payPendingDetail,
+              
+            }
+          ]
         },
         {
           path: "/",
