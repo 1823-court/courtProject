@@ -58,11 +58,11 @@ export default {
     margin-bottom: 10px;
   }
   .icons {
-    .w(15);
-    .h(15);
+    .w(10);
+    .h(10);
     position: absolute;
-    top: 16px;
-    left: 20px;
+    .top(15);
+    .left(17);
   }
 
   form {
@@ -75,10 +75,11 @@ export default {
       margin: 8px auto;
       text-align: center;
       input {
-        .w(246);
+        .w(250);
         .h(40);
         border-radius: 5px;
         border: 1px solid rgb(141, 141, 141);
+        margin-right: 0.08rem;
       }
       span {
         display: inline-block;
@@ -104,13 +105,14 @@ export default {
         padding: 0 2px;
         border: 1px solid rgb(141, 141, 141);
         border-radius: 5px;
+        margin-bottom: 10px;
       }
       .eyes {
         .w(20);
         .h(20);
         position: absolute;
-        top: 27px;
-        right: 25px;
+        .top(15);
+        .right(22);
       }
     }
   }

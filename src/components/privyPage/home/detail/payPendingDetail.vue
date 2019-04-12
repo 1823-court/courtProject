@@ -100,11 +100,11 @@ export default {
       font-weight: 400;
     }
     .icons {
-      .w(15);
-      .h(15);
+      .w(10);
+      .h(10);
       position: absolute;
-      top: 16px;
-      left: 20px;
+      top: 20px;
+      left: 24px;
     }
   }
   .line {

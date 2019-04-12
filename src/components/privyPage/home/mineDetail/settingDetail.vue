@@ -65,8 +65,8 @@ export default {
     .w(18);
     .h(18);
     position: absolute;
-    top: 16px;
-    left: 20px;
+    .top(16);
+    .left(20);
   }
   .wrap {
     .w(375);
@@ -83,21 +83,21 @@ export default {
       .w(40);
       .h(40);
       position: absolute;
-      top: 39px;
+      .top(57);
       right: 0px;
     }
     #iconfont3 {
       .w(40);
       .h(40);
       position: absolute;
-      top: 92px;
+      .top(107);
       right: 0px;
     }
     #iconfont4 {
       .w(40);
       .h(40);
       position: absolute;
-      top: 140px;
+      .top(158);
       right: 0px;
     }
   }

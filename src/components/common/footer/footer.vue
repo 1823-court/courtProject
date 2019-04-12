@@ -37,7 +37,7 @@ export default {
   img {
     .w(25);
     .h(25);
-    margin-left: 2px;
+    margin-left: 0.12rem;
   }
   .sel {
     color: @indexFontcolor;

@@ -51,11 +51,11 @@ export default {
     margin-bottom: 10px;
   }
   .icons {
-    .w(15);
-    .h(15);
+    .w(10);
+    .h(10);
     position: absolute;
-    top: 16px;
-    left: 20px;
+    .top(15);
+    .left(17);
   }
   .wrap {
     .w(375);
