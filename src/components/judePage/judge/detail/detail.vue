@@ -57,13 +57,13 @@ export default {
         .h(16);
        // background: @d-headerColor;
         position: absolute;
-        top: 14px;
-        left: 20px;
+        .top(14);
+        .left(20);
     };
     .ann_detail{
         .h(44);
         //background: yellowgreen;
-        font-size: 17px;
+        font-size: @fontSize-L;
         font-weight: 800;
         text-align: center;
         .l_h(45);
@@ -72,12 +72,12 @@ export default {
     .ann_center{
        
         .img_box{
-            margin-left: 20px;
+            .margin(0,0,0,20);
             
             img{
                 .h(106);
                 .w(78);
-                margin-right: 28px;
+                .margin(0,28,0,0)
             }
         }
         .gray{
@@ -86,7 +86,7 @@ export default {
         }
         .space_pic{
         font-size: @fontSize-L;
-        margin:10px 20px;
+        .margin(10,20,10,20);
         }
         img{
             .w(100);
@@ -94,12 +94,11 @@ export default {
             display: inline;
         }
         .detail_p{
-            margin-left: 20px;
+            .margin(30,0,0,20);
             font-size: @fontSize-m;
             //background: red;
-            margin-top: 30px;
             p{
-                margin-bottom: 25px;
+                .margin(0,0,25,0);
             }
             span{
                 //background: blue;

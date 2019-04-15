@@ -45,23 +45,23 @@ header{
     //background: pink;
     // .w(375);
     position: absolute;
-    margin-left: 20px;
+    .margin(0,0,0,20);
     input{
         .w(306);
         .h(30);
         background: rgba(225,225,225,0.5);
         border-radius: 8px;
         border: 0;
-        text-indent: 36px;
+        .t_i(36);
         outline: none;
-        margin-top:20px;
+        .margin(20,0,0,0);
     }
     img{
        .w(20);
        .h(20); 
        position: absolute;
-       top:27px;
-      margin-left: 10px;
+       .top(27);
+      .margin(0,0,0,10);
     }
 }
 .notice{  
@@ -70,8 +70,8 @@ header{
        .h(20);
        display: inline-block;
        position: absolute;
-       right: 15px;
-       top: 25px;
+       .right(15);
+       .top(25);
     }
 }
 }
@@ -84,7 +84,7 @@ header{
     text-align: center;
     justify-content: space-around;
     font-weight: 800;
-    padding: 5px;
+    .padding(5,5,5,5);
     background: white;
     div{
         background: white;  

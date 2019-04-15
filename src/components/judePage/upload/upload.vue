@@ -80,7 +80,7 @@ export default {
         margin: 13px auto;
         background: white;
         font-size: @fontSize-s;
-        text-indent: 10px;
+        .t_i(10);
         border-radius: 8px;
         label{
             font-size: @fontSize-L;
@@ -91,16 +91,16 @@ export default {
             // -webkit-appearance:none;
             // background: url("../../../common/img/arrow_down@2x.png") no-repeat scroll right center transparent;
 
-            margin-top: 15px;
+            .margin(15,0,0,0);
             .h(30);
             .w(235);
             border-radius: 6px;
             border-bottom: 1px solid gray;
-            text-indent: 10px;
+            .t_i(10);
             
         }；
         option{
-           margin-top: 44px;
+           .margin(44,0,0,0);
            .h(30);
            .w(230);
            background: red;
@@ -110,8 +110,8 @@ export default {
             font-size: @fontSize-L;
             .h(40);
            input{
-               margin-top: 15px;
-        text-indent: 10px;
+               .margin(15,0,0,5);
+               .t_i(10);
 
                 .h(30);
                 .w(235);
@@ -121,7 +121,6 @@ export default {
                 border-radius: 5px;
                 border: 1px solid #ddd;
                 outline: none;
-                margin-left: 5px;
            }
         }
     }
@@ -131,7 +130,7 @@ export default {
         margin: 13px auto;
         background: white;
         font-size: @fontSize-L;
-        text-indent: 10px;
+        .t_i(10);
     
         .add{
             // display: block;
@@ -139,15 +138,15 @@ export default {
             .h(98);
              border: 1px solid rgb(216,216,216); 
             font-size: 70px;
-            margin: 10px;
-            text-indent: 0px;
-            margin-left: 95px;
-            margin-top: -20px;
+            .margin(-20,10,10,95);
+            .t_i(0);
+            // margin-left: 95px;
+            // margin-top: -20px;
             img{
                 .w(40);
                 .h(40);
                 margin: 0 auto;
-                margin-top: 25px;
+                .margin(25,0,25,27);
             }
         }
     }
@@ -160,13 +159,13 @@ export default {
         margin: 0 auto;
         text-align: center;
         .l_h(30);
-        margin-bottom: 10px;
+        .margin(20,0,10,0);
         float: left;
-        margin-top: 20px;
     }
     .published{
-        margin-left: 57px;
-        margin-right: 73px;
+        .margin(20,73,0,57);
+        // margin-left: 57px;
+        // margin-right: 73px;
         background: #feb834;
         border-radius: 8px;
     }

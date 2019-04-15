@@ -110,7 +110,7 @@ export default {
                 font-size: @fontSize-m;
                 color: #666;
                 //margin-left: 15px;
-                text-indent: 15px;
+                .t_i(15);
                 .h(31);
                 .l_h(31);
         };
@@ -127,7 +127,7 @@ export default {
             display:flex;
             align-items:center;
             .right{
-                margin-left: 28px;
+                .margin(0,0,0,28);
                 img{
                    .w(98);
                    .h(98);
@@ -149,7 +149,7 @@ export default {
                     text-overflow: ellipsis;
                     white-space: nowrap;
                     
-                    margin-bottom: 7px;
+                    .margin(0,0,7,0);
                 };
                 .case_no{
                     font-size:@fontSize-s;

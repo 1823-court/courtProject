@@ -59,7 +59,7 @@ export default {
     div {
       color: #fff;
       font-size: @fontSize-xL;
-      margin-bottom: 10px;
+     .margin(0,0,10,0);
       img {
         .w(57);
         .h(57);
@@ -92,14 +92,14 @@ export default {
       font-size: @fontSize-m;
       color: #000;
       background: #fff;
-      margin-bottom: 10px;
-      padding-left: 24px;
+      .margin(0,0,10,0);
+      .padding(0,0,0,24);
     }
     #iconfont1 {
       .w(40);
       .h(40);
       position: absolute;
-      top: 162px;
+      .top(173);
       right: 0px;
       .iconfont {
         .w(15);
@@ -111,21 +111,21 @@ export default {
       .w(40);
       .h(40);
       position: absolute;
-      top: 214px;
+      .top(227);
       right: 0px;
     }
     #iconfont3 {
       .w(40);
       .h(40);
       position: absolute;
-      top: 265px;
+      .top(272);
       right: 0px;
     }
     #iconfont4 {
       .w(40);
       .h(40);
       position: absolute;
-      top: 313px;
+      .top(323);
       right: 0px;
     }
   }
@@ -139,7 +139,7 @@ export default {
     font-size: @fontSize-m;
     margin: 0 auto;
     position: relative;
-    bottom: -417px;
+    .bottom(-340);
   }
 }
 </style>
