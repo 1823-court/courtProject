@@ -99,7 +99,7 @@ export default {
       .w(40);
       .h(40);
       position: absolute;
-      top: 162px;
+      .top(173);
       right: 0px;
       .iconfont {
         .w(15);
@@ -111,21 +111,21 @@ export default {
       .w(40);
       .h(40);
       position: absolute;
-      top: 214px;
+      .top(227);
       right: 0px;
     }
     #iconfont3 {
       .w(40);
       .h(40);
       position: absolute;
-      top: 265px;
+      .top(272);
       right: 0px;
     }
     #iconfont4 {
       .w(40);
       .h(40);
       position: absolute;
-      top: 313px;
+      .top(323);
       right: 0px;
     }
   }
