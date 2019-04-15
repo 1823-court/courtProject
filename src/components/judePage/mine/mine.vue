@@ -14,7 +14,7 @@
         <li @click="sever()">客服</li><div id='iconfont4'><span class="iconfont">&#xe64a;</span></div>
       </ul>
       <footer>退出登录</footer>
-      <tab/>>
+      <tab/>
     </div>
 </template>
 
