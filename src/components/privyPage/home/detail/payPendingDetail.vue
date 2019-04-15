@@ -49,9 +49,9 @@
       <div class="line">
         <p>费用标准：</p>
         <select>
-          <option></option>
-          <option></option>
-          <option></option>
+          <option>费用标准</option>
+          <option>222</option>
+          <option>2345</option>
         </select>
       </div>
       <div class="line">
@@ -103,8 +103,8 @@ export default {
       .w(10);
       .h(10);
       position: absolute;
-      top: 20px;
-      left: 24px;
+      .top(20);
+      .left(24);
     }
   }
   .line {
