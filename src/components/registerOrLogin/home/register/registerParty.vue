@@ -17,42 +17,36 @@
         >
         <p class="tips1" id="tips" v-show="tips1">请输入正确的姓名</p>
         <br>
-        <input type="text" placeholder="请输入用户名" class="Pname" v-model="Pname" @blur="reg2">
+        <input type="text" placeholder="请输入用户名" class="pname" v-model="pname" @blur="reg2">
         <p class="tips2" id="tips" v-show="tips2">请输入正确的用户名</p>
 
         <br>
-        <input type="text" placeholder="请输入身份证号码" class="id_card" v-model="id_card" @blur="reg7">
+        <input type="text" placeholder="请输入身份证号码" class="pid_card" v-model="pid_card" @blur="reg7">
         <p class="tips7" id="tips" v-show="tips7">请输入正确的身份证号码</p>
 
         <br>
-        <input type="text" placeholder="请输入邮箱" class="phone" v-model="phone" @blur="reg3">
+        <input type="text" placeholder="请输入正确的手机号" class="pphone" v-model="pphone" @blur="reg3">
         <p class="tips3" id="tips" v-show="tips3">请输入正确的邮箱号</p>
 
         <br>
-        <input
-          type="text"
-          placeholder="请输入验证码"
-          class="phone-number-style"
-          v-model="phone_number"
-          @blur="reg4"
-        >
+        <input type="text" placeholder="请输入邮箱" class="pemail" v-model="pemail" @blur="reg4">
         <p class="tips4" id="tips" v-show="tips4">请输入正确的验证码</p>
 
         <br>
-        <input type="password" placeholder="请输入密码" class="Password" v-model="Password" @blur="reg5">
+        <input type="password" placeholder="请输入密码" class="password" v-model="password" @blur="reg5">
         <p class="tips5" id="tips" v-show="tips5">请输入正确的密码</p>
 
         <br>
         <input
           type="password"
           placeholder="请输入确认密码"
-          class="Repassword"
-          v-model="Repassword"
+          class="repassword"
+          v-model="repassword"
           @blur="reg6"
         >
         <p class="tips6" id="tips" v-show="tips6">两次密码不一致</p>
         <br>
-        <input type="submit" value="注册" class="register">
+        <button @click="register" class="register">注册</button> >
         <br>
       </div>
     </div>
@@ -66,17 +60,17 @@ export default {
       title: "当事人注册",
       single: false,
       parties_name: "",
-      Pname: "",
-      phone: "",
-      phone_number: "",
-      Password: "",
-      Repassword: "",
-      id_card: "",
+      pname: "",
+      pphone: "",
+      pemail: "",
+      password: "",
+      repassword: "",
+      pid_card: "",
       t1: /^[\u4E00-\u9FA5\uf900-\ufa2d·s]{2,20}$/,
       t2: /^[\u4E00-\u9FA5\uf900-\ufa2d·s]{2,20}$/,
       t3: /^0?(13|14|15|18|17)[0-9]{9}$/,
-      t4: /^d{6}$/,
-      t5: /^w{6,12}$/,
+      t4: /(\S)+[@]{1}(\S)+[.]{1}(\w)+/,
+      t5: /^[a-zA-Z0-9]{6,10}$/,
       t7: /^(\d{6})(\d{4})(\d{2})(\d{2})(\d{3})([0-9]|X)$/,
 
       tips1: false,
@@ -103,64 +97,83 @@ export default {
       }
     },
     reg2() {
-      var str = this.Pname;
+      var str = this.pname;
       console.log(str);
       var restr = this.t2;
-      if (!restr.test(str) || this.Pname == "") {
+      if (!restr.test(str) || this.pname == "") {
         this.tips2 = true;
       } else {
         this.tips2 = false;
       }
     },
     reg3() {
-      var str = this.phone;
+      var str = this.pphone;
       console.log(str);
       var restr = this.t3;
-      if (!restr.test(str) || this.phone == "") {
+      if (!restr.test(str) || this.pphone == "") {
         this.tips3 = true;
       } else {
         this.tips3 = false;
       }
     },
     reg4() {
-      var str = this.phone_number;
+      var str = this.pemail;
       console.log(str);
       var restr = this.t4;
-      if (!restr.test(str) || this.phone_number == "") {
+      if (!restr.test(str) || this.pemail == "") {
         this.tips4 = true;
       } else {
         this.tips4 = false;
       }
     },
     reg5() {
-      var str = this.Password;
+      var str = this.password;
       console.log(str);
       var restr = this.t5;
-      if (!restr.test(str) || this.Password == "") {
+      if (!restr.test(str) || this.password == "") {
         this.tips5 = true;
       } else {
         this.tips5 = false;
       }
     },
     reg6() {
-      var str = this.Repassword;
+      var str = this.repassword;
       console.log(str);
       var restr = this.t6;
-      if (this.Repassword !== this.Password || this.Repassword == "") {
+      if (this.repassword !== this.password || this.repassword == "") {
         this.tips6 = true;
       } else {
         this.tips6 = false;
       }
     },
     reg7() {
-      var str = this.id_card;
+      var str = this.pid_card;
       console.log(str);
       var restr = this.t7;
-      if (!restr.test(str) || this.id_card == "") {
+      if (!restr.test(str) || this.pid_card == "") {
         this.tips7 = true;
       } else {
         this.tips7 = false;
       }
+    },
+
+    register() {
+      this.$http
+        .post("http://106.14.169.217:8000/parties_app/partiesregist/", {
+          parties_name: this.parties_name,
+          pname: this.pname,
+          pphone: this.pphone,
+          pemail: this.pemail,
+          password: this.password,
+          repassword: this.repassword,
+          pid_card: this.pid_card
+        })
+        .then(function(response) {
+          console.log(response);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
     }
   }
 };
@@ -222,7 +235,6 @@ export default {
       border: none;
       border-bottom: 1px solid #726b66;
     }
-
     .register {
       margin-top: 100px;
       border: none;

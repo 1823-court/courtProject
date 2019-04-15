@@ -3,7 +3,7 @@
     <router-view></router-view>
     <header class="header">
       <div>
-        <img src="../../common/img/ban3.png" alt />
+        <img src="../../common/img/ban3.png" alt>
         <p class="choose" @click="goindex">登录 / 注册</p>
       </div>
     </header>
@@ -153,7 +153,7 @@ export default {
     font-size: @fontSize-m;
     margin: 0 auto;
     position: relative;
-    bottom: -417px;
+    .bottom(-320);
   }
 }
 </style>

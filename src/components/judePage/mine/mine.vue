@@ -1,52 +1,64 @@
 <template>
-    <div id="mine">
-     <router-view></router-view>
+  <div id="mine">
+    <router-view></router-view>
     <header class="header">
       <div>
         <img src="../../../common/img/ban3.png" alt>
         <p class="choose" @click="goindex">登录 / 注册</p>
       </div>
     </header>
-      <ul class="items">
-        <li @click="goSetting()">设置</li><div id='iconfont1'><span class="iconfont">&#xe64a;</span></div>
-        <li @click="goNotice()">消息通知</li><div id='iconfont2'><span class="iconfont">&#xe64a;</span></div>
-        <li  @click="jugdeNotice()">关于人民法院公告</li><div id='iconfont3'><span class="iconfont">&#xe64a;</span></div>
-        <li @click="sever()">客服</li><div id='iconfont4'><span class="iconfont">&#xe64a;</span></div>
-      </ul>
-      <footer>退出登录</footer>
-      <tab/>>
-    </div>
+    <ul class="items">
+      <li @click="goSetting()">设置</li>
+      <div id="iconfont1">
+        <span class="iconfont">&#xe64a;</span>
+      </div>
+      <li @click="goNotice()">消息通知</li>
+      <div id="iconfont2">
+        <span class="iconfont">&#xe64a;</span>
+      </div>
+      <li @click="jugdeNotice()">关于人民法院公告</li>
+      <div id="iconfont3">
+        <span class="iconfont">&#xe64a;</span>
+      </div>
+      <li @click="sever()">客服</li>
+      <div id="iconfont4">
+        <span class="iconfont">&#xe64a;</span>
+      </div>
+    </ul>
+    <footer>退出登录</footer>
+    <tab/>>
+  </div>
 </template>
 
 <script>
-  import Tab from '../../common/tab/tab'
+import Tab from "../../common/tab/tab";
 export default {
-     components:{
-		 Tab
-   },
-    methods: {
-      goSetting(){
-        this.$router.push({name:'settingDetail'})
-      },
-      goNotice(){
-        this.$router.push({name:'msgNoRead'})
-      },
-      jugdeNotice(){
-        this.$router.push({name:'jugdeNotice'})
-      },
-      sever(){
-        this.$router.push({name:'sever'})
-      },
-      goindex(){
-        this.$router.push({name:"register"})
-      }
+  components: {
+    Tab
+  },
+  methods: {
+    goSetting() {
+      this.$router.push({ name: "settingDetail" });
     },
-}
+    goNotice() {
+      this.$router.push({ name: "msgNoRead" });
+    },
+    jugdeNotice() {
+      this.$router.push({ name: "jugdeNotice" });
+    },
+    sever() {
+      this.$router.push({ name: "sever" });
+    },
+    goindex() {
+      this.$router.push({ name: "register" });
+    }
+  }
+};
 </script>
 
 <style lang="less" scoped>
-@import '../../../common/css/index.less';
-@import '../../../common/font/myfont.css';
+@import "../../../common/css/index.less";
+@import "../../../common/font/myfont.css";
 #mine {
   .w(375);
   // position: absolute;
@@ -139,7 +151,7 @@ export default {
     font-size: @fontSize-m;
     margin: 0 auto;
     position: relative;
-    bottom: -417px;
+    .bottom(-320);
   }
 }
 </style>

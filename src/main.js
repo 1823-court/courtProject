@@ -7,11 +7,13 @@ import router from "./router";
 import "jquery";
 import "../node_modules/swiper/dist/css/swiper.min.css";
 import Axios from "./axios";
+import axios from "./axios";
 import store from "./store";
 Vue.prototype.$axios = Axios;
-import iView from 'iview';
-import 'iview/dist/styles/iview.css';
-import $ from 'jquery';
+import iView from "iview";
+import querystring from "querystring";
+import "iview/dist/styles/iview.css";
+import $ from "jquery";
 Vue.config.productionTip = false;
 Vue.use(iView);
 //图片懒加载
@@ -23,8 +25,19 @@ Vue.use(LazyLoad, {
 });
 /* eslint-disable no-new */
 
-
-
+const baseURL = process.env.NODE_ENV === "production" ? "/" : "/api";
+const http = axios.create({
+  baseURL: baseURL,
+  timeout: 10000,
+  withCredentials: true,
+  headers: { "X-Requested-With": "XMLHttpRequest" },
+  transformRequest: [
+    data => {
+      return querystring.stringify(data);
+    }
+  ]
+});
+Vue.prototype.$http = http;
 new Vue({
   el: "#app",
   router,

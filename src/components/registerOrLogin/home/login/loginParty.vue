@@ -12,11 +12,11 @@
         <div class="img">
           <img src="../../../../common/img/login_top.png" alt>
         </div>
-        <input type="text" placeholder="请输入用户名/身份证" class="Pname" v-model="Pname" @blur="reg1">
+        <input type="text" placeholder="请输入用户名/身份证" class="pname" v-model="pname" @blur="reg1">
         <p class="tips1" id="tips" v-show="tips1">请输入正确的用户名</p>
 
         <hr>
-        <input type="password" placeholder="请输入密码" class="Password" v-model="Password" @blur="reg2">
+        <input type="password" placeholder="请输入密码" class="password" v-model="password" @blur="reg2">
         <p class="tips2" id="tips" v-show="tips2">请输入正确的密码</p>
 
         <router-link tag="a" to="/loginShortMessage">忘记密码</router-link>
@@ -38,8 +38,8 @@ export default {
     return {
       title: "当事人登录",
       single: false,
-      Pname: "",
-      Password: "",
+      pname: "",
+      password: "",
       t1: /^[\u4E00-\u9FA5\uf900-\ufa2d·s]{2,20}$/,
       t2: /^w{6,12}$/,
       tips1: false,
@@ -51,20 +51,20 @@ export default {
       this.$router.go(-1);
     },
     reg1() {
-      var str = this.Pname;
+      var str = this.pname;
       console.log(str);
       var restr = this.t1;
-      if (!restr.test(str) || this.Pname == "") {
+      if (!restr.test(str) || this.pname == "") {
         this.tips1 = true;
       } else {
         this.tips1 = false;
       }
     },
     reg2() {
-      var str = this.Password;
+      var str = this.password;
       console.log(str);
       var restr = this.t2;
-      if (!restr.test(str) || this.Password == "") {
+      if (!restr.test(str) || this.password == "") {
         this.tips2 = true;
       } else {
         this.tips2 = false;
@@ -72,6 +72,21 @@ export default {
     },
     goParty() {
       this.$router.push({ path: "/privyindex/payPending" });
+    },
+    login() {
+      this.$http
+        .post("http://106.14.169.217:8000/parties_app/login/", {
+          pname: this.pname,
+          password: this.password
+        })
+        .then(function(response) {
+          console.log(response);
+          this.$router.push({ path: "/privyindex" });
+        })
+
+        .catch(function(error) {
+          console.log(error);
+        });
     }
   }
 };
@@ -124,7 +139,7 @@ hr {
   }
 
   .register_input {
-    .Pname {
+    .pname {
       .w(300);
       .h(30);
       margin-top: 20px;
@@ -132,7 +147,7 @@ hr {
       outline: none;
     }
 
-    .Password {
+    .password {
       .w(230);
       .h(30);
       margin-top: 20px;
